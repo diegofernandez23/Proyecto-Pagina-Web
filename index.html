@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <link rel="icon" type="image/x-icon" href="imagenes/icono.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochileros por el Mundo</title>
+    <!--vincular el archivo CSS-->
+    <link rel="stylesheet" href="styles/style-a.css">
+    <link rel="stylesheet" href="styles/style-index-general.css">
+    <link rel="stylesheet" href="styles/otros-rincones.css">
+    <link rel="stylesheet" href="styles/mapa.css">
+    
+</head>
+
+<body>
+    <!-- cabecera-->
+    <header class="cabecera">
+        <div class="nombre-web">
+            <a href="index.html" class="enlace-titulo">
+                <h1>Mochileros por el Mundo</h1>
+            </a>
+        </div>
+        <nav class="menu-navegacion">
+            <ul>
+                <li><a href="buscador.html" data-lang="destinos">Destinos</a></li>
+                <li><a href="comunidad.html" data-lang="comunidad">Comunidad</a></li>
+                <li><a href="sobre_nosotros.html" data-lang="sobre_nosotros">Sobre nosotros</a></li>
+                <li><a href="otros-rincones.html" data-lang="otros_rincones">Otros rincones</a></li>
+                <li><a id="perfil-icon" href="perfil.html">
+                    <img src="imagenes/icono-cab.png" alt="Perfil" class="icono-cab" id="foto-perfil-cabecera">
+                </a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="imagenes/logo.png" alt="Logo Mochileros por el Mundo" class="logo-img">
+            </a>
+
+            <label for="selector-idioma">Lang</label>
+            <select class="selector-idioma" id="selector-idioma">
+                <option>ES</option>
+                <option>EN</option>
+                <option>FR</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="rincones-cuerpo-principal">
+        <!-- Cuadro de "descubre tu próxima aventura" -->
+        <div class="cuadricula-mapa">
+            <h6 class="mapa-h7" data-lang="descubre_aventura">Descubre tu próxima aventura</h6>
+            <h5 class="ciudad-h5" data-lang="destinos_increibles">Explora destinos increibles y crea recuerdos inolvidables</h5>
+            <button class="boton-explora-destinos" onclick="document.location='buscador.html'" data-lang="explorar_destinos">Explorar Destinos</button>
+        </div>
+
+
+        <!-- Destinos destacados -->
+       <div class="cuadricula-mapa-destinos">
+            <h6 class="mapa-h7" data-lang="destinos_destacados">Destinos destacados</h6>
+            <div class="caja-destinos-destacados">
+                <div class="caja-individual-destino-destacado"> 
+                    <h5 class="ciudad-h5" data-lang="francia">París, Francia</h5>
+                    <img src="imagenes/paris.png" alt="París, Francia" class="ciudad-imagen">
+                    <!-- clase estrellas-->
+                    <div class="estrellas">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-half" viewBox="0 0 16 16">
+                            <path d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"/>
+                        </svg>
+                    </div>
+                    <button class="boton-explora-destinos" onclick="document.location='NUEVO-version-c-francia.html'" data-lang="ver_mas">Ver más</button>
+                </div>
+                <div class="caja-individual-destino-destacado"> 
+                    <h5 class="ciudad-h5" data-lang="japon">Tokio, Japón</h5>
+                    <img src="imagenes/hongkong.png" alt="Tokio, Japón" class="ciudad-imagen">
+                    <!-- clase estrellas-->
+                    <div class="estrellas">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                    </div>
+                    <button class="boton-explora-destinos" onclick="document.location='NUEVO-version-c-japon.html'" data-lang="ver_mas">Ver más</button>
+                </div>
+                <div class="caja-individual-destino-destacado"> 
+                    <h5 class="ciudad-h5" data-lang="peru">Machu Picchu, Perú</h5>
+                    <img src="imagenes/cuzco.png" alt="Machu Picchu, Perú" class="ciudad-imagen">
+                    <!-- clase estrellas-->
+                    <div class="estrellas">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                    </div>
+                    <button class="boton-explora-destinos" onclick="document.location='NUEVO-version-c-brasil.html'" data-lang="ver_mas">Ver más</button>
+                </div>                
+            </div>
+        </div>
+
+
+        <!-- MAPA -->
+         <div class="mapa-interactivo-contenedor">
+            <img src="imagenes/mapa-mundo.jpg" alt="Mapa" class="imagen-mapa">
+            
+            <!-- chinchetas-->
+            <a href="NUEVO-version-c-brasil.html" class="chincheta chincheta-rio">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+            </a>
+            
+            <a href="NUEVO-version-c-francia.html" class="chincheta chincheta-paris">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+            </a>
+
+            <a href="NUEVO-version-c-noruega.html" class="chincheta chincheta-noruega">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+            </a>
+
+            <a href="NUEVO-version-c-italia.html" class="chincheta chincheta-roma">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+            </a>
+
+            <a href="NUEVO-version-c-japon.html" class="chincheta chincheta-japon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+            </a>
+
+            <a href="NUEVO-version-c-marruecos.html" class="chincheta chincheta-marruecos">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+            </a>
+
+        </div>
+
+
+        <!-- LO QUE DICEN NUESTROS VIAJEROS-->
+         <div class="cuadricula-mapa-destinos">
+            <h6 class="mapa-h7" data-lang="dicen_viajeros">Lo que dicen nuestros viajeros</h6>
+            <div class="caja-opiniones">
+                <div class="cuadro-opinion">                
+                    <img src="imagenes/paris.png" alt="París, Francia" class="ciudad-imagen">
+                    <h5 class="ciudad-h5">Joselito</h5>
+                    <h5 class="ciudad-h5" data-lang="mensaje_joselito1">¡La mejor experiencia de mi vida!</h5>
+                </div>
+                <div class="cuadro-opinion">                
+                    <img src="imagenes/barcelona.png" alt="Barcelona, España" class="ciudad-imagen">
+                    <h5 class="ciudad-h5">Carlos</h5>
+                    <h5 class="ciudad-h5" data-lang="mensaje_carlos1">¡Me encanta!</h5>
+                </div>
+                <div class="cuadro-opinion">                
+                    <img src="imagenes/NY.png" alt="Nueva York, Estados Unidos" class="ciudad-imagen">
+                    <h5 class="ciudad-h5">Ana</h5>
+                    <h5 class="ciudad-h5" data-lang="mensaje_ana1">¡Increíble!</h5>
+                </div>
+            </div>
+            <button class="boton-explora-destinos" onclick="document.location='comunidad.html'" data-lang="ir_comunidad">Ir a la comunidad</button>
+         </div>
+
+
+        <!-- NEWSLETTER -->
+        <div class="cuadricula-mapa">
+            <h6 class="mapa-h7" data-lang="newsletter">Suscríbete a nuestra newsletter</h6>
+            <h5 class="ciudad-h5" data-lang="recibe_info">Recibe información sobre tus próximas grandes aventuras</h5>
+            <div class="caja-opiniones">
+                <label for="correo">Email</label>
+                <input type="text" id="correo" name="correo" required>
+                <button id="btn-suscribir" class="boton-explora-destinos" data-lang="suscribir">Suscríbete</button>
+            </div>
+        </div>
+
+
+    
+    </main>
+
+
+    <footer class="pie-pagina">
+        <div>
+            &copy; 2025 Mochileros por el Mundo
+        </div>
+        <div>
+            <a href="sobre_nosotros.html" data-lang="sobre_nosotros">Sobre nosotros</a>
+            <a href="#" data-lang="política_privacidad">Política de Privacidad</a>
+            <a href="#" data-lang="ayuda">Ayuda</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://www.instagram.com"><img src="imagenes/instagram.png" alt="Instagram"></a></li>
+                <li><a href="https://www.tiktok.com"><img src="imagenes/tiktok.png" alt="TikTok"></a></li>
+                <li><a href="https://www.youtube.com"><img src="imagenes/youtube.png" alt="YouTube"></a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- scripts -->
+    <script src="script/perfil-icon.js"></script>
+    <script src="script/restricciones-campos-c.js"></script>
+    <script src="script/conditional-perfil.js"></script>
+    <script src="script/traductor.js"></script>
+    <script src="script/newsletter.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <link rel="icon" type="image/x-icon" href="imagenes/icono.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochileros por el Mundo</title>
+    <!--vincular el archivo CSS-->
+    <link rel="stylesheet" href="styles/style-c.css">
+    <link rel="stylesheet" href="styles/style-index-general.css">
+    <link rel="stylesheet" href="styles/otros-rincones.css">
+</head>
+<body>
+
+    <!-- cabecera-->
+    <header class="cabecera">
+        <div class="nombre-web">
+            <a href="index.html" class="enlace-titulo">
+                <h1>Mochileros por el Mundo</h1>
+            </a>
+        </div>
+        <nav class="menu-navegacion">
+            <ul>
+                <li><a href="buscador.html" data-lang="destinos">Destinos</a></li>
+                <li><a href="comunidad.html" data-lang="comunidad">Comunidad</a></li>
+                <li><a href="sobre_nosotros.html" data-lang="sobre_nosotros">Sobre nosotros</a></li>
+                <li><a href="otros-rincones.html" data-lang="otros_rincones">Otros rincones</a></li>
+                <li><a id="perfil-icon" href="perfil.html">
+                    <img src="imagenes/icono-cab.png" alt="Perfil" class="icono-cab" id="foto-perfil-cabecera">
+                </a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="imagenes/logo.png" alt="Logo Mochileros por el Mundo" class="logo-img">
+            </a>
+            <label for="selector-idioma">Lang</label>
+            <select class="selector-idioma" id="selector-idioma">
+                <option>ES</option>
+                <option>EN</option>
+                <option>FR</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="rincones-cuerpo-principal">
+
+
+        <!-- BARRA DE BÚSQUEDA SE PUEDE SELECCIONAR CONTIENENTE Y PAÍS-->    
+        <div class="buscador-destinos">
+            <label for="continente-select" data-lang="seleccion_contienete">Selecciona Continente:</label>
+            <select id="continente-select" onchange="actualizarPaises()">
+                <option value="" data-lang="todos_contienetes">-- Todos los Continentes --</option>
+                <option value="europa" data-lang="europa">Europa</option>
+                <option value="asia" data-lang="asia">Asia</option>
+                <option value="africa" data-lang="africa">África</option>
+                <option value="america_norte" data-lang="ameria_n">América del Norte</option>
+                <option value="america_sur" data-lang="america_s">América del Sur</option>
+                <option value="oceania" data-lang="oceania">Oceanía</option>
+            </select>
+            <label for="pais-select" data-lang="seleccion_pais">Selecciona País:</label>
+            <select id="pais-select">
+                <option value="" data-lang="todos_paises">-- Todos los Países --</option>
+                </select>
+            <button onclick="filtrarCiudades()" data-lang="bucador_destinos">Buscar Destinos</button>
+        </div>
+
+        <!-- recuadro de contienente: las ciudades se organizan en 3/4 columnas -->
+        <div class="banner"> <!-- CAMBIAR COLOR -->
+            <h3 class="continentes" data-lang="europa">EUROPA</h3>
+        </div>
+
+        <!-- Cuadrícula de todad las ciudades de europa -->
+        <div class="cuadricula-ciudades europa">
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="viena">Viena, Austria</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/viena.png" alt="Viena">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="viena1">Ciudad imperial con museos y música clásica a cada paso. El Palacio de Schönbrunn y la Ringstrasse condensan el barroco y el historicismo, mientras cafés como Demel mantienen la tradición pastelera. Ideal para caminar entre parques y teatros de ópera.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="brujas">Brujas, Bélgica</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/Brujas.png" alt="Brujas">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="brujas1">Centro medieval perfectamente conservado, canales bordeados de árboles y plazas adoquinadas como el Markt. Campanarios, casas gremiales y chocolaterías crean un ambiente de cuento que invita a perderse sin prisa.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="copenhague">Copenhague, Dinamarca</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/copenhague.png" alt="Copenhague">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="copenhague1">Equilibrio entre diseño contemporáneo y tradición nórdica. Nyhavn, Tívoli y barrios ciclistas muestran una ciudad humana y acogedora; gastronomía de vanguardia y respeto por el espacio público.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="luibliana">Luibliana, Eslovenia</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/luibliana.png" alt="Luibliana">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="luibliana1">Capital pequeña y escénica, con casco peatonal, cafés junto al río y el castillo en lo alto. Base ideal para excursiones al lago Bled y los Alpes Julianos.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="barcelona">Barcelona, España</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/barcelona.png" alt="Barcelona">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="barcelona1">Modernismo de Gaudí, mar y montaña en un mismo plano. La Sagrada Familia, Park Güell y la vida de barrio conviven con mercados y museos; paseos desde Montjuïc a las playas.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="sevilla">Sevilla, España</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/sevilla.png" alt="Sevilla">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="sevilla1">Casco histórico monumental, patios y azulejos. El Alcázar, la Catedral y el barrio de Santa Cruz se suman a una potente cultura de tapas y al flamenco.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="tallin">Tallin, Estonia</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/tallin.png" alt="Tallin">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="tallin1">Ciudad vieja medieval amurallada, torres y tejados de colores con vistas al Báltico. Invierno frío, pero fotogénico desde Toompea.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="paris">París, Francia</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/paris.png" alt="Paris">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="paris1">Romance urbano: Sena, bulevares y museos icónicos. Barrios con identidad propia y cafés a pie de calle; Notre Dame, Sacré-Coeur y la Torre Eiffel como hitos imprescindibles.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="budapest">Budapest, Hungría</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/budapest.png" alt="Budapest">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="budapest1">Arquitectura Art Nouveau, baños termales y paseos nocturnos sobre el Danubio. El Parlamento brilla al caer la tarde desde el Puente de las Cadenas.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="florencia">Florencia, Italia</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/florencia.png" alt="Florencia">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="florencia1">Cuna del Renacimiento: Duomo, Uffizi y artesanías en el Oltrarno. Una ciudad-museo viva donde cada calle guarda esculturas, palacios y talleres.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="roma">Roma, Italia</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/roma.png" alt="Roma">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="roma1">La “Ciudad Eterna” combina ruinas clásicas, plazas barrocas y vida de barrio. Del Panteón a la Fontana di Trevi, la historia convive con trattorias y terrazas.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="venecia">Venecia, Italia</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/venecia.png" alt="Venecia">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="venecia1">Sin coches y con un trazado acuático único. Canales, palacios y puentes conectan islas; desde San Marcos a los barrios más tranquilos, es pura contemplación.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="valeta">La Valeta, Malta</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/valeta.png" alt="Valeta">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="valeta1">Fortificada y barroca, con miradores al Gran Puerto. Palacios, iglesias y museos concentrados en un casco compacto y caminable.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="bergen">Bergen, Noruega</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/bergen.png" alt="Bergen">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="bergen1">Casas de madera en Bryggen, puerto vivo y montañas que caen a fiordos. Punto de partida perfecto para rutas escénicas.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="amsterdam">Ámsterdam, Paises Bajos</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/amsterdam.png" alt="Amsterdam">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="amsterdam1">Canales Patrimonio de la UNESCO, gables estrechos y cultura ciclista. Museos de primer nivel y barrios verdes conectados por puentes.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="oporto">Oporto, Portugal</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/oporto.png" alt="Oporto">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="oporto1">Azulejos, puentes sobre el Duero y bodegas de vino de Oporto. Librería Lello y piscinas de Leça como iconos contemporáneos.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="londres">Londres, Reino Unido</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/londres.png" alt="Londres">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="londres1">Historia y vanguardia a orillas del Támesis. Museos gratuitos, parques inmensos y una escena cultural y gastronómica inagotable.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="edimburgo">Edimburgo, Reino Unido</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/edimburgo.png" alt="Edimburgo">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="edimburgo1">Royal Mile, castillo y colinas verdes. La roca volcánica de Arthur’s Seat regala una panorámica excepcional sobre la ciudad de piedra.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="praga">Praga, República Checa</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/praga.png" alt="Praga">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="praga1">Cúpulas y torres góticas sobre un casco antiguo fotogénico. Puente de Carlos al amanecer y cafés históricos con música y literatura.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="lucerna">Lucerna, Suiza</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/lucerna.png" alt="Lucerna">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="lucerna1">Lago, montes cercanos y el Kapellbrücke como postal. Tejados medievales y aire alpino a pocos minutos de rutas de montaña.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="zurich">Zurich, Suiza</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/zurich.png" alt="Zurich">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="zurich1">Casco antiguo elegante junto al lago, museos, galerías y vida junto al agua. Veranos vibrantes y eficiencia suiza en cada detalle.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="reikiavik">Reikiavik, Islandia</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/reikiavik.png" alt="Reikiavik">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="reikiavik1">Arquitectura moderna como Harpa y Hallgrímskirkja entre paisajes volcánicos. Base para auroras y baños termales cercanos.</h6>
+            </div>
+        </div>    
+        
+        <!-- recuadro de contienente: las ciudades se organizan en 3/4 columnas (a ver cuantas caben)-->
+        <div class="banner"> <!-- CAMBIAR COLOR -->
+            <h3 class="continentes">ASIA</h3>
+        </div>
+        <!-- Cuadrícula de todad las ciudades de europa -->
+        <div class="cuadricula-ciudades asia"> 
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="beijing">Beijing, China</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/beijing.png" alt="Beijing">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="beijing1">Capital imperial con la Ciudad Prohibida, hutongs y avenidas amplias. Puerta a tramos cercanos de la Gran Muralla y a una cocina regional riquísima.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="hong">Hong Kong, China</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/hongkong.png" alt="Hongkong">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="hong1">Horizonte denso en torno a un puerto lleno de ferris. Montañas, islas y reservas naturales a minutos del centro financiero.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="seul">Seúl, Corea del Sur</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/seul.png" alt="Seul">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="seul1">Rascacielos y palacios, mercados nocturnos y una red de metro impecable. Distritos como Bukchon y Myeongdong muestran tradición y moda.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="jaipur">Jaipur, India</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/jaipur.png" alt="Jaipur">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="jaipur1">La “Ciudad Rosa”: Hawa Mahal, fuertes y bazares color salmón. Artesanías, joyería y gastronomía del Rajastán en palacios y calles.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="tokio">Kioto, Japón</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/kioto.png" alt="Kioto">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="kioto1">Templos, santuarios y jardines clásicos. Hanami en primavera, rutas arboladas y posibilidad de cruzarse con geishas en Gion.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="luang">Luang Prabang, Laos</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/luang.png" alt="Luang">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="luang1">Patrimonio UNESCO junto a la confluencia de ríos. Procesiones de monjes al amanecer, cascadas cercanas y arquitectura colonial-budista.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="beirut">Beirut, Líbano</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/beirut.png" alt="Beirut">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="beirut1">Playas, clubes y azoteas frente a mezquitas y zocos históricos. Gastronomía y vida nocturna con aire mediterráneo y levantino.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="mascate">Mascate, Omán</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/mascate.png" alt="Mascate">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="mascate1">Bahías y montañas enmarcando mezquitas, zocos y fuertes portugueses. Paseos costeros y arquitectura blanca junto al Golfo de Omán.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="doha">Doha, Qatar</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/doha.png" alt="Doha">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="doha1">Corniche con skyline futurista, Souq Waqif y el Museo de Arte Islámico de I. M. Pei. Mezcla de tradición y nuevas áreas culturales.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="mai">Chiang Mai, Tailandia</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/mai.png" alt="Mai">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="mai1">Templos en la ladera, cafés y mercados creativos. Punto de partida para naturaleza del norte y experiencias culinarias intensas.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="hanoi">Hanoi, Vietnam</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/hanoi.png" alt="Hanoi">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="hanoi1">Lagos, templos y barrio francés con aire romántico. Calles angostas con cafés tradicionales y mercados vibrantes.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="singapur">Singapur, Singapur</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/singapur.png" alt="Singapur">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="singapur1">Ciudad-jardín con selva urbana, Jardín Botánico y Gardens by the Bay. Templos, casas patrimoniales y una logística impecable para moverse.</h6>
+            </div>
+
+        </div>  
+
+        <!-- recuadro de contienente: las ciudades se organizan en 3/4 columnas (a ver cuantas caben)-->
+        <div class="banner"> <!-- CAMBIAR COLOR -->
+            <h3 class="continentes">ÁFRICA</h3>
+        </div>
+        <!-- Cuadrícula de todad las ciudades de europa -->
+        <div class="cuadricula-ciudades africa"> 
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="chef">Chefchaouen, Marruecos</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/chefchaouen.png" alt="Chefchaouen">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="chef1">Medina azul entre montañas del Rif. Callejuelas pintadas, puertas artesanales y miradores cercanos para ver el conjunto desde arriba.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="cabo">Ciudad del Cabo, Sudáfrica</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/cabo.png" alt="Cabo">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="cabo1">Table Mountain, playas con pingüinos y barrios coloridos como Bo-Kaap. Jardines, viñedos cercanos y rutas panorámicas costeras.</h6>
+            </div>
+
+        </div>  
+        
+        <!-- recuadro de contienente: las ciudades se organizan en 3/4 columnas (a ver cuantas caben)-->
+        <div class="banner"> <!-- CAMBIAR COLOR -->
+            <!-- h2 (de style-index.css) para el cuadrado de continente-->
+            <h3 class="continentes">OCEANÍA</h3>
+        </div>
+        <!-- Cuadrícula de todad las ciudades de europa -->
+        <div class="cuadricula-ciudades oceania"> 
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="sidney">Sídney, Australia</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/sidney.png" alt="Sidney">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="sidney1">Ópera icónica, bahía navegable y playas urbanas como Bondi. Ferris cotidianos y parques frente al agua.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="queen">Queenstown, Nueva Zelanda</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/queenstown.png" alt="Queenstown">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="queen1">Capital de la adrenalina entre lago y montañas. Miradores naturales, aventuras y paisajes cinematográficos.</h6>
+            </div>
+
+        </div>  
+
+        <!-- recuadro de contienente: las ciudades se organizan en 3/4 columnas (a ver cuantas caben)-->
+        <div class="banner"> <!-- CAMBIAR COLOR -->
+            <h3 class="continentes">AMÉRICA DEL NORTE</h3>
+        </div>
+        <!-- Cuadrícula de todad las ciudades de europa -->
+        <div class="cuadricula-ciudades america_norte "> 
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="quebec">Ciudad de Quebec, Canadá</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/quebec.png" alt="Quebec">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="quebec1">Casco amurallado en altura con vistas al San Lorenzo. Ambiente europeo, tejados empinados y puestas de sol rosadas.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="ny">Nueva York, Estados Unidos</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/NY.png" alt="NY">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="ny1">Arquitectura icónica, parques como Central Park y una escena artística incomparable. Energía urbana que no se apaga.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="sf">San Francisco, Estados Unidos</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/SF.png" alt="SF">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="sf1">Puente Golden Gate, colinas y casas victorianas. Museos de talla mundial y barrios con carácter propio.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="sm">San Miguel de Allende, México</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/allende.png" alt="Allende">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="sm1">Centro colonial con parroquia neogótica rosada. Calles adoquinadas, patios y arte en galerías y talleres.</h6>
+            </div>
+
+        </div> 
+        
+        <!-- recuadro de contienente: las ciudades se organizan en 3/4 columnas (a ver cuantas caben)-->
+        <div class="banner"> <!-- CAMBIAR COLOR -->
+            <h3 class="continentes">AMÉRICA DEL SUR</h3>
+        </div>
+        <!-- Cuadrícula de todad las ciudades de europa -->
+        <div class="cuadricula-ciudades america_sur"> 
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="ba">Buenos Aires, Argentina</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/buenosaires.png" alt="BuenosAires">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="ba1">Barrios con identidad (Recoleta, San Telmo, La Boca), arquitectura variada y vida cultural intensa. Tango, parrillas y librerías en edificios emblemáticos.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="rio">Rio de Janeiro, Brasil</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/rio.png" alt="Rio">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="rio1">Playas míticas, selva urbana y el Cristo Redentor vigilando bahías y morros. Ritmo de samba en calles y plazas.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="cartagena">Cartagena, Colombia</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/cartagena.png" alt="Cartagena">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="cartagena1">Murallas, plazas y casonas coloniales cubiertas de buganvillas. Getsemaní y Bocagrande muestran su cara creativa y moderna.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="quito">Quito, Ecuador</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/quito.png" alt="Quito">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="quito1">Casco histórico dorado bajo volcanes andinos. Vistas desde la Basílica del Voto Nacional y mercados tradicionales.</h6>
+            </div>
+
+            <!-- cuadrado individual de ciudad -->
+            <div class="ciudad">
+                <!-- nombre ciudad  -->
+                <h5 class="ciudad-h5" data-lang="cuzco">Cuzco, Perú</h5>
+                <!-- imagen ciudad -->
+                <img class="ciudad-imagen" src="imagenes/cuzco.png" alt="Cuzco">
+                <!-- texto ciudad -->
+                <h6 class="ciudad-h6" data-lang="cuzco1">Antigua capital inca con plazas, conventos y calles empedradas. Punto de partida a Machu Picchu y miradores como el Cristo Blanco.</h6>
+            </div>
+
+        </div> 
+
+    </main>
+
+    
+
+    <footer class="pie-pagina">
+        <div>
+            &copy; 2025 Mochileros por el Mundo
+        </div>
+        <div>
+            <a href="#" data-lang="sobre_nosotros">Sobre nosotros</a>
+            <a href="#" data-lang="politica_privacidad">Política de Privacidad</a>
+            <a href="#" data-lang="ayuda">Ayuda</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://www.instagram.com"><img src="imagenes/instagram.png" alt="Instagram"></a></li>
+                <li><a href="https://www.tiktok.com"><img src="imagenes/tiktok.png" alt="TikTok"></a></li>
+                <li><a href="https://www.youtube.com"><img src="imagenes/youtube.png" alt="YouTube"></a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <!-- scripts -->
+     <script src="script/perfil-icon.js"></script>
+    <script src="script/restricciones-campos-c.js"></script>
+    <script src="script/conditional-perfil.js"></script>
+    <script src="script/otros-rincones.js"></script>
+    <script src="script/traductor.js"></script>
+
+</body>
+</html>

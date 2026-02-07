@@ -1,0 +1,152 @@
+<!--10. MOCHILEROS SEGUROS
+antes del resumen de compra > seguro de viajes a través del boton de "siguiente" en ampliación del formulario--> 
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <link rel="icon" type="image/x-icon" href="imagenes/icono.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochileros por el Mundo</title>
+    <link rel="stylesheet" href="styles/style-index-general.css">
+    <link rel="stylesheet" href="styles/style-c.css">
+    <link rel="stylesheet" href="styles/modal-c.css">
+    <link rel="stylesheet" href="styles/ampliacion-c.css">
+    <link rel="stylesheet" href="styles/acompanante-c.css">
+    <link rel="stylesheet" href="styles/seguros.css">
+    <link rel="stylesheet" href="styles/perfil-compra.css">
+    <link rel="stylesheet" href="styles/consejos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <header class="cabecera">
+        <div class="nombre-web">
+            <a href="index.html" class="enlace-titulo">
+                <h1>Mochileros por el Mundo</h1>
+            </a>
+        </div>
+        <nav class="menu-navegacion">
+            <ul>
+                <li><a href="buscador.html" data-lang="destinos">Destinos</a></li>
+                <li><a href="comunidad.html" data-lang="comunidad">Comunidad</a></li>
+                <li><a href="sobre_nosotros.html" data-lang="sobre_nosotros">Sobre nosotros</a></li>
+                <li><a href="otros-rincones.html" data-lang="otros_rincones">Otros rincones</a></li>
+                <li><a id="perfil-icon" href="perfil.html">
+                    <img src="imagenes/icono-cab.png" alt="Perfil" class="icono-cab" id="foto-perfil-cabecera">
+                </a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="imagenes/logo.png" alt="Logo Mochileros por el Mundo" class="logo-img">
+            </a>
+            <label for="selector-idioma">Lang</label>
+            <select class="selector-idioma" id="selector-idioma">
+                <option>ES</option>
+                <option>EN</option>
+                <option>FR</option>
+            </select>
+        </div>
+    </header>
+
+    <main class="contenedor-compra">
+        <div class="pack-info">
+            <!-- left column will be rendered by script -->
+        </div>
+
+        <div class="pack-info">
+            <section class="formulario-compra">
+                <h2 data-lang="seguro">Seguro de viaje</h2>
+                <h2 class="pregunta" data-lang="pregunta_seguro">¿Desea contratar un seguro de viaje por 50€?</h2>
+                <form id="form-seguro"> 
+                    <div class="opciones-radio">
+                        <div class="radio-opcion"> 
+                            <input type="radio" id="seguro_si" name="seguro_contratado" value="50" required>
+                            <label for="seguro_si" data-lang="si">Sí</label>
+                        </div>
+                        
+                        <div class="radio-opcion">
+                            <input type="radio" id="seguro_no" name="seguro_contratado" value="0" required>
+                            <label for="seguro_no" data-lang="no">No</label>
+                        </div>
+                    </div>
+
+                    <div class = "cuadro-oferta-seguros">
+                        <h3 class="oferta-titulo" data-lang="al_seleccionar">Al seleccionar contratarlo, obtienes cobertura para:</h3>
+                        <ul class="lista-cobertura">
+                            <li data-lang="c1">Asistencia médica y gastos de hospitalización (hasta 50.000€).</li>
+                            <li data-lang="c2">Cancelación o interrupción del viaje por causas de fuerza mayor.</li>
+                            <li data-lang="c3">Pérdida, robo o retraso de equipaje.</li>
+                            <li data-lang="c4">Repatriación por razones médicas.</li>
+                        </ul>
+                        <p class="terminos-link">
+                            <span data-lang="poliza1">Puedes leer los </span>
+                            
+                            <a href="https://es.wikipedia.org/wiki/T%C3%A9rmino" class="enlace-poliza" data-lang="poliza2">términos y condiciones completos de la póliza aquí</a>.
+                        </p>
+                    </div>
+
+                    <label class="acepto-label">
+                        <input type="checkbox" id="acepto_terminos_seguro" name="acepto_terminos_seguro" required disabled>
+                        <a data-lang="aceptar_seguro">Acepto los términos y condiciones de la póliza de seguros</a>
+                    </label>
+                        
+                    <div class="botones">
+                        <button type="submit" class="boton-siguiente" data-lang="siguiente">Siguiente</button>
+                        <button type="button" id="volver-seguro" class="boton-volver" data-lang="volver">Volver</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <div>
+            &copy; 2025 Mochileros por el Mundo
+        </div>
+        <div>
+            <a href="sobre_nosotros.html">Sobre nosotros</a>
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Ayuda</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://www.instagram.com"><img src="imagenes/instagram.png" alt="Instagram"></a></li>
+                <li><a href="https://www.tiktok.com"><img src="imagenes/tiktok.png" alt="TikTok"></a></li>
+                <li><a href="https://www.youtube.com"><img src="imagenes/youtube.png" alt="YouTube"></a></li>
+            </ul>
+        </nav>
+    </footer>
+
+
+    <!-- ventana emergente de la póliza de seguros -->
+    <div id="modal-terminos" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h3 class="modal-title" data-lang="tyc_poliza">Términos y Condiciones de la Póliza de Seguros</h3>
+            
+            <div class="modal-body">
+                <p data-lang="t1">El presente contrato tiene como finalidad brindar cobertura al asegurado durante sus desplazamientos nacionales e internacionales, frente a riesgos relacionados con accidentes, enfermedades, pérdida de equipaje y otros eventos especificados en la póliza.</p>
+                <p data-lang="t2">Asegurado: Persona titular de la póliza que disfruta de las coberturas contratadas.</p>
+                <p data-lang="t3">Asegurador: Compañía que emite la póliza y asume las obligaciones descritas.</p>
+                <p data-lang="t4">Viaje: Desplazamiento temporal fuera del lugar de residencia habitual.</p>
+                <p data-lang="t5">Repatriación: Totalmente cubierta en caso de necesidad médica.</p>
+                <p data-lang="t6">El presente contrato se regirá por la legislación vigente en el país de emisión de la póliza. Cualquier disputa será resuelta en los tribunales competentes de dicho país.</p>
+                <p data-lang="t7"><strong>Pulsa fuera de la ventana para volver a la página de seguros y aceptar los términos de la póliza.</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/perfil-icon.js"></script>
+    <script src="script/valoracion-review.js"></script>
+    <script src="script/acompanante-c.js"></script>
+    <script src="script/conditional-perfil.js"></script>
+    <script src="script/seguros.js"></script>
+    <script src="script/traductor.js"></script>
+
+</body>
+</html>

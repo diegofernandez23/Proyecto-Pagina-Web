@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <link rel="icon" type="image/x-icon" href="imagenes/icono.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochileros por el Mundo</title>
+    <!--vincular el archivo CSS-->
+    <link rel="stylesheet" href="styles/style-a.css">
+    <link rel="stylesheet" href="styles/style-index-general.css">
+</head>
+<body>
+
+    <!-- cabecera-->
+    <header class="cabecera">
+        <div class="nombre-web">
+            <a href="index.html" class="enlace-titulo">
+                <h1>Mochileros por el Mundo</h1>
+            </a>
+        </div>
+        <nav class="menu-navegacion">
+            <ul>
+                <li><a href="buscador.html" data-lang="destinos">Destinos</a></li>
+                <li><a href="comunidad.html" data-lang="comunidad">Comunidad</a></li>
+                <li><a href="sobre_nosotros.html" data-lang="sobre_nosotros">Sobre nosotros</a></li>
+                <li><a href="otros-rincones.html" data-lang="otros_rincones">Otros rincones</a></li>
+                <li><a id="perfil-icon" href="perfil.html">
+                    <img src="imagenes/icono-cab.png" alt="Perfil" class="icono-cab" id="foto-perfil-cabecera">
+                </a></li>
+            </ul>
+        </nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="imagenes/logo.png" alt="Logo Mochileros por el Mundo" class="logo-img">
+            </a>
+            <label for="selector-idioma">Lang</label>
+            <select class="selector-idioma" id="selector-idioma">
+                <option>ES</option>
+                <option>EN</option>
+                <option>FR</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- contenido principal -->
+    <main class="contenido-principal">
+        <h2 class="forms-nuevos" data-lang="reg_usuario">Registro de Usuario</h2>
+        
+        <form class="forms-registro">
+
+            <div class="nombre-apellidos-forms">
+                <div class="campo">
+                    <label for="nombre" data-lang="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Juan" required>
+                </div>
+                <div class="campo">
+                    <label for="apellidos" data-lang="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Pérez Gonzalez" required>
+                </div>
+            </div>
+
+            <div class="email-forms">
+                <div class="campo">
+                    <label for="email" data-lang="correo">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="campo">
+                    <label for="repetir-email" data-lang="repetir_correo">Repetir Correo:</label>
+                    <input type="email" id="repetir-email" name="repetir-email" placeholder="ejemplo@correo.com" required>
+                </div>
+            </div>
+
+            <div class="usuario-forms">
+                <div class="campo">
+                    <label for="usuario" data-lang="usuario">Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="juan" required>
+                </div>
+                <div class="campo">
+                    <label for="contrasena" data-lang="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="********" required>
+                </div>
+            </div>
+
+            <div class="fecha-nacimiento-forms">
+                <label for="fecha-nacimiento" data-lang="f_nacimineto">Fecha de Nacimiento:</label>
+                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+            </div>
+
+            <div class="imagen-forms">
+                <label for="imagen" data-lang="subir_foto_perfil">Subir Foto de Perfil</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required>
+            </div>
+
+            <div class="terminos-priv">
+                <input type="checkbox" id="terminos" name="terminos" required>
+                <label for="terminos" data-lang="privacidad1">Acepto la</label>
+                    <a href="#" data-lang="privacidad2">Política de Privacidad</a>
+            </div>
+
+            <button class="btn-datos" type="submit" data-lang="guardar">Guardar datos y acceder</button>
+        </form>
+    </main>
+
+    
+    <footer class="pie-pagina">
+        <div>
+            &copy; 2025 Mochileros por el Mundo
+        </div>
+        <div>
+            <a href="#" data-lang="sobre_nosotros">Sobre nosotros</a>
+            <a href="#" data-lang="politica_privacidad">Política de Privacidad</a>
+            <a href="#" data-lang="ayuda">Ayuda</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="https://www.instagram.com"><img src="imagenes/instagram.png" alt="Instagram"></a></li>
+                <li><a href="https://www.tiktok.com"><img src="imagenes/tiktok.png" alt="TikTok"></a></li>
+                <li><a href="https://www.youtube.com"><img src="imagenes/youtube.png" alt="YouTube"></a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <script src="script/perfil-icon.js"></script>
+    <script src="script/restricciones-campos-a.js"></script>
+    <script src="script/registro-a.js"></script>
+    <script src="script/traductor.js"></script>
+
+</body>
+</html>
