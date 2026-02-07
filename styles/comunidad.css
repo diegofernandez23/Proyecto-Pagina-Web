@@ -1,0 +1,175 @@
+/* comunidad.css */
+
+/* Texto */
+h2 {
+    color: black;
+}
+
+p {
+    color: rgb(53, 53, 53);
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente (Header, Main, Footer) */
+    min-height: 100vh; /* Altura es viewport entero */
+    margin: 0; /* Eliminar el margen por defecto del body */
+}
+
+.contenido-principal {
+    flex-grow: 1; /* Para que ocupe todo el espacio y empuje el pie de página abjo */
+}
+
+/* Contenedor principal */
+.contenido-principal.comunidad {
+    background-color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título de la sección */
+.titulo-comunidad {
+    font-size: 2.5rem;
+    color: #1e2e1f; /* verde oscuro */
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* Contenedor de las tres tarjetas */
+.opciones-comunidad {
+    display: flex;
+    gap: 25px;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap; /* Para responsive */
+}
+
+/* Estilo general de la tarjeta */
+.tarjeta-opcion {
+    flex: 1 1 300px; /* Base para responsive */
+    background-color: rgb(164, 196, 154);
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 380px; /* Altura mínima para que sean uniformes */
+    /* Para suavizar el movimiento de la tarjeta al hacer hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Al pasar el cursor por encima se mueve ligeramente la tarjeta */
+.tarjeta-opcion:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Iconos */
+.icono-opcion {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Colores específicos de los iconos */
+.icono-experiencias {
+    background-color: #6a0dad;
+}
+.icono-consejos {
+    background-color: #1e8449;
+}
+.icono-compartir {
+    background-color: #e74c3c;
+}
+
+/* Títulos y descripciones */
+.titulo-opcion {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.descripcion-opcion {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: auto; /* Empuja el botón hacia abajo */
+}
+
+/* Botones */
+.btn-opcion {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+    min-width: 200px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Colores específicos de los botones */
+.btn-experiencias {
+    background-color: #8e44ad;
+    color: #ffffff;
+    text-decoration: none;
+}
+.btn-consejos {
+    background-color: #0a582a;
+    color: #ffffff;
+    text-decoration: none;
+}
+.btn-compartir {
+    background-color: #c0392b;
+    color: white;
+    text-decoration: none;
+
+}
+
+/* Efectos hover de los botones */
+.btn-experiencias:hover {
+    background-color: #9b59b6;
+    transform: scale(1.02);
+}
+.btn-consejos:hover {
+    background-color: #2ecc71;
+    transform: scale(1.02);
+}
+.btn-compartir:hover {
+    background-color: #e74c3c;
+    transform: scale(1.02);
+}
+
+/* RESPONSIVE: móvil */
+@media (max-width: 768px) {
+    .titulo-comunidad {
+        font-size: 2rem;
+    }
+    
+    .opciones-comunidad {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta-opcion {
+        width: 90%;
+        max-width: 400px;
+        min-height: auto;
+    }
+
+    .btn-opcion {
+        width: 100%;
+    }
+}

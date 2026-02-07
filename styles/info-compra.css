@@ -1,0 +1,142 @@
+.contenedor-resumen {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contenedor-resumen h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.resumen-tabla {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #1e2e1f;
+    margin: 0 auto;
+}
+
+.resumen-tabla td {
+    padding: 6px 12px;
+    border: 1px solid #1e2e1f;
+}
+
+.resumen-tabla td:first-child {
+    font-weight: 600;
+    text-transform: capitalize;
+    background-color: #d2e6cd;
+}
+
+.botones-contenedor {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-inicio {
+    padding: 10px 20px;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    background-color: rgb(168, 209, 155); /*color de fondo*/
+    border: 1.5px solid #6a6a6a; /*color borde*/
+}
+
+.btn-inicio:hover {
+    background-color: rgb(130, 167, 120); /*color al pasar el raton*/
+}
+
+.btn-perfil {
+    padding: 10px 20px;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    background-color: #e3e1e1; /*color de fondo*/
+    border: 1.5px solid #6a6a6a; /*color borde*/
+}
+
+.btn-perfil:hover {
+    background-color: #a1a1a1; /*color al pasar el raton*/
+}
+
+.mensaje-info {
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 1.5rem;
+}
+
+.mensaje-error {
+    text-align: center;
+    color: #8b222d;
+    font-size: 16px;
+    padding: 20px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.info-adicional p,
+.datos-ampliacion p,
+.acompanante-info p,
+.acompanante-detalle p,
+.datos-acompanantes p {
+    padding: 8px 12px;
+    margin: 0;
+    border-top: 1px solid #eee;
+    background: #fff;
+}
+
+.info-adicional p:first-of-type,
+.datos-ampliacion p:first-of-type,
+.acompanante-info p:first-of-type,
+.acompanante-detalle p:first-of-type,
+.datos-acompanantes p:first-of-type {
+    border-top: none;
+}
+
+.info-adicional p strong,
+.datos-ampliacion p strong,
+.acompanante-info p strong,
+.acompanante-detalle p strong,
+.datos-acompanantes p strong {
+    display: inline-block;
+    min-width: 180px; /* ancho de columna de etiquetas */
+    font-weight: 700;
+    color: #222;
+}
+
+/* Si el label es muy largo, permitir que el valor ocupe el resto y las líneas siguientes se alineen con el valor */
+.info-adicional p,
+.datos-ampliacion p,
+.acompanante-info p,
+.acompanante-detalle p,
+.datos-acompanantes p {
+    line-height: 1.4;
+}
+
+/* Zebra rows similar a la tabla */
+.info-adicional p:nth-of-type(even),
+.datos-ampliacion p:nth-of-type(even),
+.acompanante-detalle p:nth-of-type(even),
+.datos-acompanantes p:nth-of-type(even) {
+    background: #fbfbfb;
+}
+
+@media (max-width: 600px) {
+    .info-adicional p strong,
+    .datos-ampliacion p strong,
+    .acompanante-info p strong,
+    .acompanante-detalle p strong,
+    .datos-acompanantes p strong {
+        min-width: 120px;
+    }
+}

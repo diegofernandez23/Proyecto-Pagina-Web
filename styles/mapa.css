@@ -1,0 +1,251 @@
+.rincones-cuerpo-principal{
+    margin-top: -17px; /* ajuste de la posición con respecto al encabezado*/
+    margin-bottom: -17px; /* ajuste de la posición con respecto al pie de página*/
+    gap: 5px; /*separación entre los componentes*/
+}
+
+/* DESCUBRE TU PRÓXIMA AVENTURA*/
+.cuadricula-mapa{
+    border: 3px solid #1e2e1f; /*borde*/
+    background-color: #d2e6cd; /*color de fondo*/
+    gap: 50px; /* Espacio entre los componentes de la cuadrícula  */
+    padding: 50px; /* Espacio interno de la cuadrícula */
+    text-align: center; /*centra el texto horizontalmente*/
+}
+
+.mapa-h7 {
+    font-size: 40px;
+    margin: 30px 0;
+    color: #576952;
+    text-align: center; /* centra correctamente */
+    font-weight: bold;
+}
+
+.boton-explora-destinos {
+  margin: 10px 0; /*margen arriba y abajo*/
+  padding: 5px 10px; /*espacio interno*/
+  background-color: #1e2e1f; /*color de fondo*/
+  border: none; /*quita borde*/
+  color: white; /*color letra*/
+  font-weight: bold; /*negrita*/
+  border-radius: 10px; /*redondeado*/
+  transition: 0.3s; /*transicion para hover*/
+  cursor: pointer; /*cambia el cursor al pasar por encima*/
+}
+.boton-explora-destinos:hover {
+  background-color: #a52a2a; /*color al pasar el raton*/
+}
+
+/* DESTINOS DESTACADOS */
+.cuadricula-mapa-destinos{
+    border: 3px solid #1e2e1f; /*borde*/
+    background-color: #a8ce9e; /*color de fondo*/
+    gap: 50px; /* Espacio entre los componentes de la cuadrícula  */
+    padding: 50px; /* Espacio interno de la cuadrícula */
+    text-align: center; /*centra el texto horizontalmente*/
+}
+
+.caja-destinos-destacados{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.caja-individual-destino-destacado{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+}
+
+.estrellas{
+    margin-top: 15px;
+}
+/* MAPA INTERACTIVO */
+.mapa-interactivo-contenedor {
+    position: relative; 
+    width: 100%;
+    aspect-ratio: 1400 / 650; 
+}
+
+.imagen-mapa {
+    /* La imagen debe ocupar todo el espacio del contenedor */
+    width: 100%;
+    height: 100%;
+    display: block; /* Elimina el espacio extra debajo de las imágenes */
+}
+
+.chincheta {
+    position: absolute; 
+    display: block;
+    cursor: pointer;
+    color: black; /* Color de la chincheta */
+    z-index: 10; /* Asegura que esté por encima de la imagen */
+    transform: translate(-50%, -100%);
+}
+
+.chincheta :hover{
+    color: #dd700a; 
+}
+
+.chincheta-rio {
+    top: 75%; /* Posiciona la chincheta a 75% desde la parte superior del contenedor */
+    left: 34%; /* Posiciona la chincheta a 34% desde el lado izquierdo del contenedor */
+}
+
+.chincheta-paris {
+    top: 28%;
+    left: 48%;
+}
+
+.chincheta-noruega {
+    top: 18.5%;
+    left: 48.5%;
+}
+
+.chincheta-roma {
+    top: 30%;
+    left: 50%;
+}
+
+.chincheta-japon {
+    top: 35%;
+    left: 86%;
+}
+
+.chincheta-marruecos {
+    top: 36%;
+    left: 45.5%;
+}
+
+/* OPINIONES DE OTROS VIAJEROS*/
+.cuadro-opinion{ /* ciudades individuales dentro de la cuadrícula de ciudades*/
+  background: #d2e6cd; /*color de fondo*/
+  border: 1px solid rgb(164, 196, 154); /*borde*/
+  border-radius: 10px; /*redondeado*/
+  padding: 10px; /*espacio interno*/
+  width: 235px; /*ancho del pack*/
+  text-align: center; /*centra el texto horizontalmente*/
+  display: grid; /* nombre, foto y texto en 1 columna (3 filas)*/
+  height: auto; /*alto automatico*/
+  margin-top: 20px;
+}
+.cuadro-opinion img {
+    /* Si la imagen no tiene una clase específica, usamos el selector anidado */
+    /* Asegura que la imagen sea un bloque para que el margen auto funcione */
+    display: block; 
+    
+    /* Centra la imagen horizontalmente */
+    margin-left: auto; 
+    margin-right: auto; 
+    
+    /* Mantener los estilos de tamaño y borde que ya hay */
+    width: 100%;
+    height: auto;
+}
+
+.caja-opiniones{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+
+/* RESPONSIVE: adaptaciones para móviles (hasta 768px) */
+@media (max-width: 768px){
+    .caja-destinos-destacados{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .caja-individual-destino-destacado {
+        /* Asegura que el contenedor de la tarjeta sea flexible */
+        width: 90%; 
+        max-width: 300px;
+        margin: 0 auto; /* Centrar la tarjeta en el espacio de 1fr */
+    }
+    .caja-opiniones {
+        flex-direction: column; /* Apila las opiniones verticalmente */
+        align-items: center; /* Centra las tarjetas apiladas */
+        gap: 20px;
+    }
+    
+    .cuadro-opinion {
+        /* Redefinir ancho para que se vea bien en móvil */
+        width: 90%; 
+        max-width: 300px;
+        margin-top: 0; /* Limpiar margen superior para controlar el espaciado con gap */
+    }
+
+    /* 3. Mapa Interactivo (Para evitar desbordamiento) */
+    .mapa-interactivo-contenedor {
+        width: 100%; /* El contenedor ocupa todo el ancho */
+        height: auto; /* La altura se ajusta automáticamente */
+        overflow-x: hidden; /* Evita la barra de desplazamiento horizontal */
+    }
+    .imagen-mapa {
+        width: 100%; /* La imagen del mapa se encoge con la pantalla */
+        height: auto;
+    }
+    .chincheta {
+    transform: translate(-50%, -47%) scale(0.5); 
+    }
+}
+
+
+
+/* RESPONSIVE: adaptaciones para tablets (601px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Destinos Destacados (Mostrar 2 columnas)  */
+    .caja-destinos-destacados {
+        display: grid;
+        /* Cambiar de 3 a 2 columnas para que sea legible */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px; /* Un poco más de espacio */
+    }
+    .caja-individual-destino-destacado {
+        /* Permitir que la tarjeta ocupe el ancho 1fr, eliminando el ancho fijo de 235px */
+        width: 100%;
+        max-width: unset; /* Desactivar el max-width de móvil */
+        margin: 0;
+    }
+
+    /*  Bloque de Opiniones (Mostrar 2 o 3 columnas)  */
+    /* Como originalmente tenía 'display: flex', podemos forzar un 'wrap' y definir anchos */
+    .caja-opiniones {
+        flex-wrap: wrap; /* Permite que las tarjetas salten a la siguiente fila */
+        gap: 30px; 
+    }
+    
+    .cuadro-opinion {
+        /* Para que quepan dos por fila (ej. 45%) */
+        width: 45%; 
+        max-width: unset; /* Desactivar el max-width de móvil */
+        margin-top: 0;
+    }
+    
+    /* Título Principal (Ajustar tamaño de fuente)  */
+    .mapa-h7 {
+        font-size: 50px; /* Aumentar de 40px (móvil) a un tamaño de tablet */
+    }
+
+    /* Mapa Interactivo y Chinchetas  */
+    .mapa-interactivo-contenedor {
+        /* Restringir el ancho total para que no sea demasiado grande */
+        width: 95%; 
+        max-width: 950px; /* Ancho máximo para la tablet */
+        margin: 20px auto; /* Centrar el mapa */
+    }
+    .imagen-mapa {
+        width: 100%; 
+        height: auto;
+    }
+
+    .chincheta {
+        /* Reducir menos que en móvil */
+        scale: 0.8; 
+    }
+    
+}

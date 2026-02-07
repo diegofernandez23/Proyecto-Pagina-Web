@@ -1,0 +1,99 @@
+/*titulo*/
+#form-acompanantes h2 {
+    text-align: center;         /*centra el titulo horizontalmente*/
+    padding: 15px;            /*espacio interno alrededor del titulo*/
+}
+
+/*formulario*/
+#form-acompanantes form {
+    display: flex;              /*activa flexbox para organizar los elementos*/
+    flex-direction: column;       /*organiza en columna*/
+    gap: 15px;                /*espacio vertical entre los elementos del formulario*/
+}
+
+/*inputs de formulario*/
+#form-acompanantes input,
+#form-acompanantes select {
+    padding: 8px;                  /*espacio interno dentro de los inputs y selects*/
+    font-size: 14px;               /*tanaño de letra*/
+    width: 100%;                  /*ocupa todo el ancho del contenedor*/
+    border: 1px solid #bababa;      /*color borde*/
+    border-radius: 10px;        /*redondeado*/
+    box-sizing: border-box;   /*quita problemas de salida de margen*/
+}
+
+/*quitar recuadro gris del fieldset*/
+#form-acompanantes fieldset {
+    border: none;           /*quita el borde gris por defecto*/
+    padding: 0;            /*quita el padding por defecto*/
+    margin: 0;             /*quita el margin por defecto*/
+    background: none;      /*quita cualquier fondo*/
+}
+
+/*estilo para las leyendas de los fieldsets*/
+#form-acompanantes legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+/*labels de los acompañantes*/
+#form-acompanantes label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+/*inputs de acompañantes*/
+#form-acompanantes input[type="text"],
+#form-acompanantes input[type="email"] {
+    min-height: 40px;
+    line-height: 1.5;
+    vertical-align: top;
+}
+
+/*espaciado entre fieldsets*/
+#form-acompanantes fieldset {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+
+#form-acompanantes fieldset:last-of-type {
+    border-bottom: none;
+}
+
+/*botones*/
+#form-acompanantes .botones {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#form-acompanantes button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border: 1.5px solid #6a6a6a;    /* borde de los botones */
+    color: rgb(0, 0, 0);            /* color del texto */
+    font-weight: bold;
+}
+
+/* Diferenciar submit y reset por type */
+.botones button[type="submit"] {
+  background-color: rgb(168, 209, 155); /* verde primario */
+  color: black;
+}
+.botones button[type="submit"]:hover {
+  background-color: rgb(130, 167, 120);
+}
+
+.botones button#volver-ampliacion {
+  background-color: #f0a0a0; /* claro neutro */
+  color: black;
+}
+.botones button#volver-ampliacion:hover {
+  background-color: #c36666;
+}

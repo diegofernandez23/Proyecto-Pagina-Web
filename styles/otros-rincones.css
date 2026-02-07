@@ -1,0 +1,174 @@
+/*cuerpo principal*/
+.rincones-cuerpo-principal {
+    display: grid; /* en fila de arriba a abajo*/
+    width: 100%;  /*ancho completo*/
+    padding: 15px; /* Espacio interno de la cuadrícula */
+    box-sizing: border-box;
+    margin-top: -12px; /* ajuste de la posición con respecto al encabezado*/
+    margin-bottom: -17px; /* ajuste de la posición con respecto al pie de página*/
+}
+
+.continentes {
+    position: absolute; /*para colocar el texto encima*/
+    top: 15%; /*posicion para colocar el texto sobre la imagen*/
+    left: 50%; /*posicion para colocar el texto sobre la imagen*/
+    transform: translate(-50%, -50%); /*centra el texto*/
+    font-size: 50px; /*tamaño letra*/
+    color: #17320e; /*color letra*/
+    font-weight: bold; /* Añade negrita */
+    z-index: 2; /*poner encima de la imagen*/
+    width: 100%; /*ancho completo*/
+    text-align: center; /*centra el texto horizontalmente*/
+}
+
+.cuadricula-ciudades{
+    border: 3px solid #1e2e1f; /*borde*/
+    background-color: #d2e6cd; /*color de fondo*/
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Crea 5 columnas de igual ancho */
+    gap: 10px;       /* antes 20px */
+    padding: 12px;   /* antes 20px */
+    margin-bottom: 7px;
+    box-sizing: border-box;
+}
+
+.ciudad{ /* ciudades individuales dentro de la cuadrícula de ciudades*/
+  background: rgb(164, 196, 154); /*color de fondo*/
+  border: 1px solid rgb(164, 196, 154); /*borde*/
+  border-radius: 10px; /*redondeado*/
+  padding: 10px; /*espacio interno*/
+  width: 235px; /*ancho del pack*/
+  text-align: center; /*centra el texto horizontalmente*/
+  display: grid; /* nombre, foto y texto en 1 columna (3 filas)*/
+  height: auto; /*alto automatico*/
+}
+
+.ciudad-h5{/* nombre de las ciudades */
+    font-size: 18px; /*tamaño letra*/
+    margin: 15px 0; /*margen arriba y abajo*/
+}
+
+.ciudad-imagen{
+    width: 230px; /*ancho imagen*/
+    height: 180px; /*alto imagen*/
+    object-fit: cover; /*ajustar imagen sin deformar*/
+    border-radius: 6px; /*redondeado*/
+}
+.ciudad-h6{/* texto informativo de cada ciudad*/
+    font-size: 15px; /*tamaño letra*/
+    margin: 15px 0; /*margen arriba y abajo*/
+    color: #121812; /*color del texto*/
+    text-align: justify; /*texto justificado*/
+}
+
+
+/*BARRA DE BÚSQUEDA DE DESTINOS*/
+.buscador-destinos {
+    display: flex; /* Alinea los elementos en fila */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 30px; /* Espacio entre selectores y botón */
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    background-color: #A4C49A;
+    border-radius: 10px;
+}
+
+.buscador-destinos select,
+.buscador-destinos button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+
+/*RESPONSIVE: adaptaciones para móviles (hasta 768px)*/
+@media (max-width: 768px) {
+
+    /* Cuadrícula de Ciudades (.cuadricula-ciudades) */
+    .cuadricula-ciudades {
+        /* Cambia el número de columnas a una sola (o 2 si quieres que sean más pequeñas) */
+        /* Opción 1: Una sola columna para que cada ciudad ocupe todo el ancho */
+        grid-template-columns: 1fr; 
+        padding: 10px; /* Reduce el padding interno */
+    }
+
+    /* Tarjeta de Ciudad (.ciudad) */
+    .ciudad {
+        width: auto; /* Permite que la tarjeta se estire para ocupar el espacio disponible de la columna (1fr) */
+        /* Eliminamos el ancho fijo (width: 235px) que impedía la adaptación */
+    }
+    
+    /* Ajusta la imagen al ancho de la tarjeta */
+    .ciudad-imagen {
+        width: 100%; /* Ocupa todo el ancho de la tarjeta */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+
+    /*  Título del Continente (.continentes) */
+    .continentes {
+        font-size: 30px; /* Reduce el tamaño del texto para que quepa */
+        top: 25%; /* Ajusta la posición vertical del texto para pantallas pequeñas */
+        /* left y transform están bien para centrar */
+    }
+
+    /*  Barra de Búsqueda (.buscador-destinos)  */
+    .buscador-destinos {
+        /* Cambia la dirección de flex de fila a columna */
+        flex-direction: column; 
+        gap: 10px; /* Reduce el espacio entre elementos */
+        align-items: stretch; /* Estira los elementos (select/button) a todo el ancho */
+    }
+
+    .buscador-destinos select,
+    .buscador-destinos button {
+        width: 100%; /* Hacemos que los selectores y el botón ocupen todo el ancho */
+        box-sizing: border-box; /* Asegura que el padding no desborde el ancho total */
+    }
+}
+
+
+/*RESPONSIVE: adaptaciones para tablets (entre 768px y 1024px)*/
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /*  Cuadrícula de Ciudades (.cuadricula-ciudades)  */
+    .cuadricula-ciudades {
+        /* Cambiamos de 5 columnas (escritorio) a 3 columnas para aprovechar mejor el espacio de la tableta */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 15px; /* Ajusta un poco el espacio */
+        padding: 15px;
+    }
+
+    /*  Tarjeta de Ciudad (.ciudad)  */
+    /* Aquí permitimos que la tarjeta se ajuste al espacio de la columna (1fr) */
+    .ciudad {
+        width: auto; /* Anula el ancho fijo de escritorio si lo tenía */
+        padding: 8px; /* Reduce un poco el padding interno */
+    }
+    
+    /* Aseguramos que la imagen use todo el ancho de la tarjeta */
+    .ciudad-imagen {
+        width: 100%;
+        height: auto;
+    }
+
+    /*  Título del Continente (.continentes) */
+    .continentes {
+        font-size: 40px; /* Tamaño intermedio entre móvil y escritorio */
+    }
+
+    /*  Barra de Búsqueda (.buscador-destinos)  */
+    /* Mantenemos el diseño original de escritorio (en fila) pero con menos espacio entre elementos */
+    .buscador-destinos {
+        gap: 20px; /* Reduce el espacio entre selectores/botón si es necesario */
+        padding: 10px;
+    }
+
+    .buscador-destinos select,
+    .buscador-destinos button {
+        /* No necesitamos cambiar el width, ya que están en fila (flex-direction: row por defecto) */
+        font-size: 15px;
+    }
+}

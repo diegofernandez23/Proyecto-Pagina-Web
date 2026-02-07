@@ -1,0 +1,439 @@
+/* Página de consejos */
+
+body {
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente (Header, Main, Footer) */
+    min-height: 100vh; /* Altura es viewport entero */
+    margin: 0; /* Eliminar el margen por defecto del body */
+}
+
+.contenido-principal {
+    flex-grow: 1; /* Para que ocupe todo el espacio y empuje el pie de página abjo */
+}
+
+/* Contenido principal */
+.contenido-principal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 10px;
+}
+
+/* Sección de consejos existentes */
+.seccion-consejos {
+  padding: 20px;
+  border: 3px solid #1e2e1f;
+}
+
+.seccion-consejos h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #1e2e1f;
+}
+
+/* Estilos para el buscador de consejos */
+.buscador-consejos {
+  border: 3px solid #1e2e1f;
+  background-color: #d2e6cd;
+  padding: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.buscador-consejos h2 {
+  margin: 0;
+  color: #1e2e1f;
+  text-align: center;
+}
+.buscador-tags {
+  gap: 10px 14px;
+}
+.buscador-actions {
+  display: flex;
+  gap: 8px;
+}
+#btn-buscar-tags, #btn-limpiar-tags {
+  padding: 8px 14px;
+  background-color: #1e2e1f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+#btn-limpiar-tags {
+  background-color: #fff;
+  color: #1e2e1f;
+  border: 2px solid #1e2e1f;
+}
+#btn-buscar-tags:hover {
+  background-color: #a52a2a;
+}
+#btn-limpiar-tags:hover {
+  background-color: #f5f5f5;
+}
+
+/* Ajustes responsivos para buscador */
+@media (max-width: 600px) {
+  .tag-checkboxes, .buscador-tags {
+    gap: 8px;
+  }
+  #btn-buscar-tags, #btn-limpiar-tags {
+    flex: 1 1 auto;
+  }
+  .buscador-actions {
+    flex-direction: column;
+  }
+}
+
+.lista-consejos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Mensaje cuando no hay consejos */
+.lista-consejos .no-consejos {
+  text-align: center;
+  color: #a52a2a;
+  font-weight: 600;
+  padding: 12px 0;
+}
+
+.lista-consejos li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.consejo-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.consejo-autor {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #1e2e1f;
+  font-style: normal;
+  padding-left: 5px;
+}
+
+.consejo-autor-img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.consejo-box {
+  padding: 15px;
+  background-color: #d2e6cd;
+  border: 2px solid #1e2e1f;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.consejo-titulo {
+  color: #1e2e1f;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.consejo-descripcion {
+  color: #1e2e1f;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+  margin-bottom: 10px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Valoración de consejos */
+.consejo-valoracion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #1e2e1f;
+}
+
+.valoracion-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.valoracion-label {
+  font-size: 13px;
+  color: #1e2e1f;
+  font-weight: bold;
+}
+
+/* Cuando la valoración aparece dentro de .pack-header (páginas NUEVO-version-c)
+   queremos que la etiqueta de media y la etiqueta 'Tu valoración' compartan
+   el mismo fondo y color de texto que `.precio` para mantener consistencia. */
+.pack-header .consejo-valoracion .valoracion-label,
+.pack-header .consejo-valoracion .mi-valoracion-label,
+.pack-intro .consejo-valoracion .valoracion-label,
+.pack-intro .consejo-valoracion .mi-valoracion-label {
+  background-color: rgba(30,46,31,0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+/* Modo solo lectura: ocultar la parte interactiva "Tu valoración" (estrellas) */
+.consejo-valoracion.solo-lectura .mi-valoracion {
+  display: none;
+}
+
+/* Ajuste de espaciado cuando está en modo solo lectura */
+.consejo-valoracion.solo-lectura .valoracion-info {
+  margin-bottom: 0;
+}
+
+/* Asegurar que la valoración colocada junto a la imagen se muestra
+   y no queda por debajo o recortada. */
+.pack-imagen .consejo-valoracion {
+  /* Posicionar justo debajo de la mini-descripción (que usa top:10% dentro de .pack-imagen) */
+  position: absolute;
+  top: calc(10% + 2.2rem);
+  left: 10px;
+  z-index: 4;
+  display: block;
+  margin: 0;
+  /* quitar la línea superior y el padding que venía por defecto */
+  border-top: none;
+  padding-top: 0;
+  box-sizing: border-box;
+}
+
+.mi-valoracion {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mi-valoracion-label {
+  font-size: 12px;
+  color: #1e2e1f;
+}
+
+.estrellas-container {
+  display: flex;
+  gap: 5px;
+}
+
+.estrella-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 20px;
+  color: #1e2e1f;
+  transition: transform 0.2s;
+}
+
+.estrella-btn:hover {
+  transform: scale(1.2);
+}
+
+.bi-star-fill {
+  color: #ffc107;
+}
+
+.bi-star {
+  color: #000000;
+}
+
+/* Estrella usada en la visualización de la media: relleno amarillo y borde negro */
+.media-star {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 4px;
+}
+.media-star svg, .media-star path {
+  display: block;
+}
+
+/* estilos para chips de tags */
+.tag-chip {
+  display: inline-block;
+  background: #fff;
+  color: #1e2e1f;
+  border: 1px solid #1e2e1f;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  margin-right: 6px;
+}
+.tags-container {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Mostrar checkboxes de tags en fila */
+.tag-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+}
+.tag-checkboxes label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+.tag-checkboxes input[type="checkbox"] {
+  transform: scale(1);
+}
+.tag-checkboxes input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+
+/* Formulario para añadir consejos */
+.consejo-forms {
+  border: 3px solid #1e2e1f;
+  background-color: #d2e6cd;
+  padding: 20px;
+}
+
+.consejo-forms h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e2e1f;
+}
+
+.consejo-forms form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.consejo-forms label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #1e2e1f;
+}
+
+.consejo-forms input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bababa;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.consejo-forms input[type="text"]:focus {
+  outline: none;
+  border-color: #1e2e1f;
+}
+
+.consejo-forms button {
+  padding: 10px 20px;
+  background-color: #1e2e1f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: center;
+  min-width: 250px;
+}
+
+.consejo-forms button:hover {
+  background-color: #a52a2a;
+}
+
+/* Botón cargar más */
+.btn-cargar-mas {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 30px;
+  background-color: #1e2e1f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  min-width: 200px;
+}
+
+.btn-cargar-mas:hover {
+  background-color: #a52a2a;
+}
+
+/* Modal para consejos */
+.modal-advice {
+  max-width: 500px;
+}
+
+.modal-author {
+  font-style: italic;
+  color: #666;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contenido-principal {
+    margin: 5px;
+  }
+
+  .seccion-consejos,
+  .consejo-forms {
+    padding: 15px;
+  }
+
+  .consejo-forms button {
+    width: 100%;
+  }
+}
+
+/* Ajustes responsivos para la caja de valoración dentro de la imagen
+   Evitar solapamiento con la mini-descripción en pantallas pequeñas */
+@media (max-width: 600px) {
+  .pack-imagen .consejo-valoracion {
+    top: calc(12% + 3.6rem); /* empujar hacia abajo para no tapar el párrafo */
+    left: 10px;
+    right: 10px;
+    z-index: 6;
+    padding: 6px 8px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .pack-imagen .consejo-valoracion {
+    top: calc(10% + 2.8rem);
+    left: 10px;
+    right: 10px;
+    z-index: 6;
+    padding: 5px 8px;
+  }
+}

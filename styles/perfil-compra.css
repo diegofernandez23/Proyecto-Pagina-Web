@@ -1,0 +1,271 @@
+.contenedor-perfil-compra {
+    padding: 0;
+    max-width: none;
+    margin: 0;
+    width: 100%;
+}
+
+.contenedor-perfil-compra h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    padding: 0 20px;
+}
+
+.layout-compra {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 20px;
+}
+
+/* Ajustar el tamaño de la columna izquierda */
+.pack-info {
+    flex: 0 0 50%;
+    min-width: 400px;
+}
+
+.info-pack-compra {
+    flex: 0 0 50%;
+    min-width: 300px;
+    /*max-width: 630px;*/ /* Limita el ancho máximo */
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto; /* Permite scroll horizontal si es necesario */
+}
+
+.datos-compra h2 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+#detalle-compra,
+.resumen-tabla {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+}
+
+.detalle-tabla,
+.resumen-tabla {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: auto;
+}
+
+.detalle-tabla td {
+    padding: 12px;
+    border: 1px solid #1e2e1f;
+    vertical-align: top;
+    position: relative;
+}
+
+.detalle-tabla td:first-child {
+    font-weight: 600;
+    background-color: #d2e6cd;
+    width: 140px;
+}
+
+.valoracion-y-review {
+    flex: 1;
+}
+
+.valoracion-y-review textarea {
+  padding: 8px;                  /*espacio interno dentro de los inputs y selects*/
+  font-size: 14px;               /*tanaño de letra*/
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;                  /*ocupa todo el ancho del contenedor*/
+  border: 1px solid #bababa;      /*color borde*/
+  border-radius: 10px;        /*redondeado*/
+  box-sizing: border-box;   /*quita problemas de salida de margen*/
+}
+
+.seccion-review {
+    padding: 20px;
+    background-color: #f9f9f9; /* Fondo suave */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+.subtitulo-review {
+    color: #0b6623; /* Verde oscuro consistente */
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn-guardar-review {
+    background-color: #0b6623;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-guardar-review:hover {
+    background-color: #084c1b;
+}
+
+.mensaje-review {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Estilo para la review ya guardada */
+.review-usuario-display {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    background-color: white;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.review-usuario-display p {
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+}
+
+.review-usuario-display .review-texto {
+    font-style: italic;
+    color: #555;
+}
+
+.botones-navegacion {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    margin-top: 2rem;
+}
+
+.btn-volver {
+    padding: 10px 20px;
+    background-color: rgb(168, 209, 155); /*color de fondo*/
+    border: 1.5px solid #6a6a6a;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-volver:hover {
+    background-color: rgb(130, 167, 120);
+}
+
+.btn-inicio {
+    padding: 10px 20px;
+    background-color: #e3e1e1; /*color de fondo*/
+    border: 1.5px solid #6a6a6a; /*color borde*/
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-inicio:hover {
+    background-color: #a1a1a1;
+}
+
+.btn-anadir-acompanante {
+    padding: 6px 10px;
+    margin-left: 8px;
+    background-color: rgb(168, 209, 155);
+    border: 1px solid #6a6a6a;
+    color: black;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-anadir-acompanante:hover {
+    background-color: rgb(130, 167, 120);
+}
+
+/* Estilo para el texto que reemplaza el botón al añadir correctamente */
+.detalle-tabla td .anadido-correcto {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0b6623; /* verde oscuro */
+    font-weight: 600;
+    background: transparent;
+}
+
+@media (max-width: 600px) {
+    .detalle-tabla td .anadido-correcto {
+        position: static;
+        transform: none;
+        display: inline-block;
+        margin-left: 8px;
+        margin-top: 20px;
+    }
+}
+
+/* Posicionar el botón hacia la derecha de la celda */
+.detalle-tabla td .btn-anadir-acompanante {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0;
+}
+
+/* En pantallas pequeñas dejar flujo normal para evitar solapamientos */
+@media (max-width: 600px) {
+    .detalle-tabla td .btn-anadir-acompanante {
+        position: static;
+        transform: none;
+        display: inline-block;
+        margin-left: 8px;
+        margin-top: 20px;
+    }
+}
+
+.mensaje-error {
+    text-align: center;
+    color: #dc3545;
+    font-size: 18px;
+    padding: 20px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .layout-compra {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+    
+    .pack-info,
+    .datos-compra {
+        min-width: auto;
+    }
+    
+    .pack-info {
+        flex: none;
+    }
+    
+    .botones-navegacion {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,223 @@
+.usuario-b {
+  padding: 15px;  /*espacio interno*/
+  display: flex;  /*activa flexbox para poner los elementos en columna*/
+  flex-direction: column;   /*organiza en columna*/
+}
+.usuario-nombre {
+  margin: 0;    /*quita margen por defecto*/
+  margin-bottom: 10px;    /*margen por debajo*/
+  font-size: 19px;    /*tamaño letra*/
+}
+.usuario-h3 {
+  margin: 0;  /*quita margen por defecto*/
+  margin-bottom: 10px;    /*margen por debajo*/
+}
+.usuario-info {
+  gap: 25px;  /*separacion horizontal entre los elementos*/
+  display: flex; /*activa flexbox para poner los elementos en fila*/
+}
+.icono-usuario {
+  display: none; /*oculto hasta que se cargue la imagen de perfil*/
+  width: 96px; /*ancho */
+  height: 96px; /*alto*/
+  object-fit: cover; /*ajusta la imagen dentro del recuadro*/
+  border-radius: 50%; /*hacerla redonda*/
+  border: 2px solid #ddd; /*borde ligero*/
+  margin-bottom: 0px; /*margen por debajo*/
+}
+.cerrar-sesion, .ver-consejos {
+  display: block; /*para que ocupe toda la linea*/
+  width: 100%;  /*ocupa todo el ancho del contenedor*/
+  height: fit-content;  /*ajusta la altura al contenido*/
+  align-self: center; /*centra el boton*/
+  background-color: #e3e1e1;  /*color de fondo*/
+  border: 1.5px solid #6a6a6a;  /*borde*/
+  color: rgb(0, 0, 0);  /*color letra*/
+  font-weight: bold;  /*negrita*/
+  padding: 10px;  /*espacio interno*/
+  border-radius: 10px;  /*redondeado*/
+  transition: 0.3s; /*transicion para hover*/
+  cursor: pointer;  /*cambia el cursor al pasar por encima*/
+}
+.cerrar-sesion:hover, .ver-consejos:hover {
+  background-color: #a1a1a1;  /*color al pasar el raton*/
+}
+
+.ver-consejos {
+  text-decoration: none; /*quita subrayado*/
+  text-align: center; /*centra el texto*/
+  margin-left: 10px; /*margen a la izquierda*/
+  margin-right: 10px; /*margen a la derecha*/
+}
+
+/* Separar el enlace de los bordes laterales dentro de la barra lateral */
+.seccion-lateral .ver-consejos {
+  display: inline-flex;
+  width: calc(100% - 24px); /* dejar 12px de espacio a cada lado */
+  max-width: 600px; /* opcional: evita que sea demasiado ancho en pantallas grandes */
+  margin: 12px auto 0; /* centrar horizontalmente y separar del contenido superior */
+  justify-content: center;
+}
+
+/* Asegurar que en la barra lateral el hover mantenga el color negro incluso si hay reglas globales más específicas */
+.seccion-lateral .ver-consejos:hover {
+  color: rgb(0, 0, 0) !important;
+}
+
+.busqueda {
+  padding: 5px 15px;  /*espacio interno*/
+  display: flex;  /*activa flexbox para poner los elementos en columna*/
+  flex-direction: column;  /*organiza en columna*/
+}
+.filtros {
+  margin-bottom: 10px;  /*margen por debajo*/
+  font-size: 16px;  /*tamaño letra*/
+  display: grid;  /*activa grid para poner los elementos en filas y columnas*/
+  grid-template-columns: repeat(3, 1fr);  /*3 columnas de igual tamaño*/
+  gap: 8px; /*separacion entre filas y columnas*/
+}
+.filtros label {
+  cursor: pointer; /*cambia el cursor al pasar por encima*/
+}
+.barra-busqueda {
+  position: relative; /*para colocar el icono dentro del input*/
+  display: inline-block;  /*para que el contenedor se ajuste al contenido*/
+  gap: 5px; /*separacion horizontal entre los elementos*/
+  margin-top: 10px;  /*margen por encima*/
+  margin-bottom: 10px;  /*margen por debajo*/
+}
+.barra-busqueda input {
+  padding: 8px 10px 8px 35px; /*espacio para el icono*/
+  border: 1px solid #bababa; /*color borde*/
+  border-radius: 10px; /*redondeado*/
+}
+.barra-busqueda img {
+  margin-top: 1.5px; /*margen por encima*/
+  width: 20px; /*ancho*/
+  height: 20px; /*alto*/
+  position: absolute; /*para colocar el icono dentro del input*/
+  left: 8px; /*posicion horizontal*/
+  top: 40%; /*posicion vertical*/
+  transform: translateY(-50%); /*centra verticalmente*/
+  pointer-events: none; /*para que no interfiera con el input*/
+}
+.consejo {
+  position: relative; /*para colocar el boton dentro del input*/
+  box-sizing: border-box; /*incluye el borde en el tamaño total*/
+  display: inline-block; /*para que el contenedor se ajuste al contenido*/
+  gap: 5px; /*separacion horizontal entre los elementos*/
+  margin-top: 10px; /*margen por encima*/
+  margin-bottom: 10px; /*margen por debajo*/
+}
+.input-busqueda {
+  border: 1px solid #bababa; /*color borde*/
+  border-radius: 10px; /*redondeado*/
+  padding: 8px; /*espacio interno*/
+  width: fit-content; /*ajusta el ancho al contenido*/
+}
+.consejo input{
+  border: 1px solid #bababa; /*color borde*/
+  border-radius: 10px; /*redondeado*/
+  padding: 8px; /*espacio interno*/
+}
+.consejo button{
+  background-color: #e3e1e1; /*color de fondo*/
+  border: 1.5px solid #6a6a6a; /*color borde*/
+  color: rgb(0, 0, 0); /*color letra*/
+  font-weight: bold; /*negrita*/
+  padding: 8px; /*espacio interno*/
+  border-radius: 10px; /*redondeado*/
+  transition: 0.3s; /*transicion para hover*/
+  margin-left: 10px; /*margen a la izquierda*/
+  align-self: flex-end; /*alinea el boton a la derecha*/
+  cursor: pointer; /*cambia el cursor al pasar por encima*/
+}
+.consejo button:hover {
+  background-color: #a1a1a1; /*color al pasar el raton*/
+}
+
+
+/*calendario*/
+.calendario {
+  width: 100px; /*ancho del calendario*/
+  border-collapse: collapse; /*quita espacio entre celdas*/
+  background: white; /*color de fondo*/
+  overflow: hidden; /*lo que sobra lo oculta*/
+  align-self: center;   /*centra el calendario*/
+  margin: 15px auto 20px auto;  /*margen arriba, derecha, abajo e izquierda*/
+  font-size: 14px; /*tamaño letra*/
+}
+
+/*calendario mes*/
+.calendario th {
+  color: black; /*color letra*/
+  background: rgb(164, 196, 154); /*color de fondo*/
+  font-weight: bold; /*negrita*/
+  border: 2px solid #1e2e1f; /*borde*/
+  border-right: none; /*quita borde derecho*/
+  border-left: none; /*quita borde izquierdo*/
+}
+
+/*calendario celdas*/
+.calendario td {
+  padding: 4px; /*espacio interno*/
+  height: 10px; /*altura fija*/
+  vertical-align: top; /*alineacion vertical arriba*/
+  text-align: right; /*alineacion horizontal derecha*/
+}
+.calendario td.especial {
+  background: rgb(164, 196, 154); /*color de fondo*/
+  border-radius: 50%; /*redondeado*/
+  font-weight: bold; /*negrita*/
+}
+.calendario td.especial:hover {
+  background: rgb(143, 163, 137); /*color al pasar el raton*/
+}
+
+/*bordes calendario*/
+.calendario td:nth-child(7) {
+  border-right: 2px solid #1e2e1f; /*borde derecho*/
+  color: #a52a2a; /*color letra*/
+}
+.calendario td:nth-child(6) {
+  color: #a52a2a; /*color letra*/
+}
+.calendario td:nth-child(1) {
+  border-left: 2px solid #1e2e1f; /*borde izquierdo*/
+}
+.calendario tr:last-child td {
+  border-bottom: 2px solid #1e2e1f; /*borde inferior*/
+}
+.calendario th:first-child {
+  border-left: 2px solid #1e2e1f; /*borde izquierdo*/
+}
+.calendario th:last-child {
+  border-right: 2px solid #1e2e1f; /*borde derecho*/
+}
+
+/*calendario efecto con el raton*/
+.calendario td:hover {
+  background: #d4d4d4;
+  border-radius: 50%; /*redondeado*/
+}
+
+/* Estilos para mostrar el autor del consejo en la lista y en el modal */
+.consejo-autor {
+  font-style: italic;
+  color: #444;
+  margin-left: 8px;
+  font-size: 0.9rem;
+  vertical-align: middle;
+}
+
+.modal-author {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 6px 0 8px 0;
+  font-weight: 600;
+}
+
+/* Ajustes para que el autor no sobresature en móviles */
+@media (max-width: 600px) {
+  .consejo-autor { display: block; margin-left: 0; margin-top: 6px; }
+}

@@ -1,0 +1,924 @@
+/*general*/
+body {
+  font-family: Arial, sans-serif;
+}
+
+.barra {
+  border: none; /*quita borde por defecto*/
+  border-top: 3px solid #1e2e1f; /*borde superior*/
+  margin: 5px 70px; /*margen*/
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente (Header, Main, Footer) */
+    min-height: 100vh; /* Altura es viewport entero */
+    margin: 0; /* Eliminar el margen por defecto del body */
+}
+
+main {
+    flex-grow: 1; /* Para que ocupe todo el espacio y empuje el pie de página abjo */
+}
+
+
+/*index.html*/
+
+
+/*cabecera*/
+.cabecera {
+  display: flex; /*activa flexbox para poner los elementos en fila*/
+  justify-content: space-between; /*distribucion horizontal entre los elementos*/
+  align-items: center; /*alineacion vertical de los elementos*/
+  background-color: rgb(59, 87, 50); /*color de fondo*/
+  border: 3px solid #1e2e1f; /*borde*/
+  color: white; /*color letra*/
+  margin: 10px; /*margen alrededor de la cabecera*/
+  padding: 15px; /*espacio interno*/
+  
+}
+
+.enlace-titulo {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Hereda el color del texto del padre (div.nombre-web) */
+}
+
+/*nombre del sitio web*/
+.nombre-web {
+  font-size: 25px; /*tamaño letra*/
+  text-align: center; /*centra el texto horizontalmente*/
+  font-weight: bold; /*negrita*/
+  text-shadow: 2px 2px 8px #1e2e1f; /*sombra del texto*/
+}
+/*menu de navegacion*/
+.menu-navegacion ul {
+  font-size: 16px; /*tamaño letra*/
+  list-style: none; /*quita los puntos de la lista*/
+  display: flex; /*activa flexbox para poner las opciones en fila*/
+  gap: 7px; /*separacion horizontal entre las opciones*/
+  text-align: center; /*centra el texto horizontalmente*/
+  margin: 0;  /*quita espacio por defecto*/
+  padding: 0; /*quita espacio por defecto*/
+}
+.menu-navegacion ul {
+  align-items: center; /*centra verticalmente los elementos del menu*/
+}
+.menu-navegacion li {
+  display: flex; /*activa flexbox para poner los elementos en fila*/
+  align-items: center; /*centra verticalmente los elementos*/
+}
+.menu-navegacion a {
+  display: inline-flex; /*activa flexbox para poner los elementos en fila*/
+  align-items: center; /*centra verticalmente los elementos*/
+}
+.menu-navegacion a {
+  color: #fff; /*color letra*/
+  text-shadow: 1px 1px 5px #1e2e1f; /*sombra del texto*/
+  text-decoration: none; /*quita subrayado*/
+  font-weight: bold; /*negrita*/
+  transition: color 0.3s; /*transicion para hover*/
+}
+.menu-navegacion a:hover {
+  color: #a52a2a; /*color al pasar el raton*/
+}
+/*logo e idioma*/
+.logo {
+  display: flex; /*activa flexbox para poner los elementos en fila*/
+  text-align: right; /*alinea a la derecha*/
+  gap: 15px; /*separacion horizontal entre los elementos*/
+  height: 40px; /*altura del logo*/
+  width: auto; /*ancho automatico*/
+}
+
+.logo-img {
+    height: 100%; /* altura de su padre (40px) */
+    width: auto;   /* Mantiene las proporciones de la imagen original */
+    display: block;
+}
+
+/* icono de cabecera (perfil) */
+#perfil-icon {
+  display: inline-flex; /*activa flexbox para poner el icono en fila*/
+  align-items: center; /*centra verticalmente los elementos*/
+  margin-right: 8px; /*margen a la derecha*/
+  text-decoration: none; /*quita subrayado*/
+}
+.icono-cab {
+  width: 34px; /*ajusta el alto/anchura del icono */
+  height: 34px;
+  object-fit: contain;
+  display: block;
+}
+/* hover: pequeño zoom al pasar el raton sobre el icono de perfil */
+#perfil-icon {
+  cursor: pointer;
+}
+#perfil-icon .icono-cab {
+  transition: transform 160ms ease; /*transicion para hover*/
+  transform-origin: center center; /*origen de la transformacion*/
+}
+#perfil-icon:hover .icono-cab,
+.menu-navegacion li:hover #perfil-icon .icono-cab {
+  transform: scale(1.18); /*zoom al pasar el raton*/
+}
+.selector-idioma {
+  padding: 2px; /*espacio interno*/
+  border-radius: 10px; /*redondeado*/
+  border: 1.2px solid #000000; /*borde*/
+  cursor: pointer; /*cambia el cursor al pasar por encima*/
+  /*linea vertical*/
+  background-image: linear-gradient(#000000, #000000); /*linea vertical*/
+  background-repeat: no-repeat; /*no repetir*/
+  background-size: 1.2px 100%; /*ancho y alto de la linea*/
+  background-position: right 15px center; /*posicion de la linea*/
+}
+/*cuerpo principal*/
+.cuerpo-principal {
+  display: flex; /*activa flexbox para poner las columnas en fila*/
+  width: 100%;  /*ancho completo*/
+}
+/*contenedor izquierdo*/
+.contenedor-izquierdo {
+  flex: 2; /*ocupa el doble que el derecho, 2/3*/
+  display: flex; /*activa flexbox para poner los elementos en columna*/
+  flex-direction: column; /*organiza en columna*/
+  margin: 10px; /*margen alrededor del contenedor*/
+}
+/*bloque superior*/
+.bloque-superior {
+  flex: 2; /*ocupa el doble que el inferior, 2/3*/
+  display: flex; /*activa flexbox para poner los elementos en columna*/
+  flex-direction: column; /*organiza en columna*/
+  margin-bottom: 10px; /*margen por debajo*/
+}
+/*banner*/
+.banner {
+  position: relative; /*permite colocar texto encima*/
+  text-align: center; /*centra el texto horizontalmente*/
+  width: 100%; /*ancho completo*/
+  height: 150px; /*altura del banner*/
+  overflow: hidden; /*lo que sobra lo oculta*/
+  border: 3px solid #1e2e1f; /*borde*/
+  box-sizing: border-box; /*incluye el borde en el tamaño total*/
+  margin-bottom: 10px;   /*margen por debajo*/
+}
+.banner h2 {
+  position: absolute; /*para colocar el texto encima*/
+  top: 35%; /*posicion para colocar el texto sobre la imagen*/
+  left: 50%; /*posicion para colocar el texto sobre la imagen*/
+  transform: translate(-50%, -50%); /*centra el texto*/
+  font-size: 30px; /*tamaño letra*/
+  color: white; /*color letra*/
+  z-index: 2; /*poner encima de la imagen*/
+  width: 100%; /*ancho completo*/
+  text-shadow: 1px 1px 5px #1e2e1f; /*sombra del texto*/
+}
+.banner-img {
+  width: 100%; /*ocupa todo el ancho del contenedor*/
+  height: 150px; /*ocupa toda la altura*/
+  object-fit: cover; /*mantiene la proporcion y recorta si sobresale*/
+  z-index: 0; /*poner detras del texto*/
+}
+
+/*Pack viajes*/
+.pack-viajes{
+  border: 3px solid #1e2e1f; /*borde*/
+  background-color: #d2e6cd; /*color de fondo*/
+}
+
+/*carrusel imagenes*/
+.carrusel {
+  position: relative; /*permite colocar elementos encima*/
+  overflow: hidden; /*lo que sobra lo oculta*/
+  height: 400px; /*altura del carrusel*/
+  margin-top: 20px; /*margen por encima*/
+  display: flex; /*activa flexbox para poner los elementos en columna*/
+  align-items: center; /*centra verticalmente los elementos*/
+  padding: 20px;  /*espacio interno*/
+  margin-bottom: 10px; /*margen por debajo*/
+}
+.carrusel-h2 {
+  text-align: center; /*centra el texto horizontalmente*/
+  width: 100%; /*ancho completo*/
+  margin-bottom: 10px; /*margen por debajo*/
+}
+.carrusel-imagenes {
+  /*position: relative; permite colocar elementos encima*/
+  display: flex; /*activa flexbox para poner los elementos en fila*/
+  gap: 20px; /*separacion horizontal entre los elementos*/
+  width: 100%; /*ancho completo*/
+  justify-content: center; /*centra horizontalmente los elementos*/
+  align-items: center; /*centra verticalmente los elementos*/
+  overflow: hidden; /*lo que sobra lo oculta*/
+}
+.pack {
+  background: rgb(164, 196, 154); /*color de fondo*/
+  border: 1px solid rgb(164, 196, 154); /*borde*/
+  border-radius: 10px; /*redondeado*/
+  padding: 10px; /*espacio interno*/
+  width: 235px; /*ancho del pack*/
+  text-align: center; /*centra el texto horizontalmente*/
+  display: none; /*oculto por defecto, se muestra con JS*/
+  height:  auto; /*alto automatico*/
+}
+.pack img {
+  width: 100%; /*ocupa todo el ancho del contenedor*/
+  height: 140px; /*altura fija*/
+  border-radius: 10px; /*redondeado*/
+  transition: 0.3s; /*transicion para hover*/
+  overflow: hidden; /*lo que sobra lo oculta*/
+}
+.pack img:hover {
+  transform: scale(1.05); /*zoom al pasar el raton*/
+}
+.pack-h3 {
+  font-size: 18px; /*tamaño letra*/
+  margin: 15px 0; /*margen arriba y abajo*/
+}
+.pack-descripcion-index {
+  font-size: 16px; /*tamaño letra*/
+  margin: 10px 0; /*margen arriba y abajo*/
+}
+.pack-dias {
+  font-size: 14px; /*tamaño letra*/
+  margin: 10px 0; /*margen arriba y abajo*/
+  color: #1e2e1f; /*color letra*/
+}
+
+.precio-index {
+  font-size: 18px; /*tamaño letra*/
+  font-weight: bold; /*negrita*/
+  color: #1e2e1f; /*color letra*/
+}
+/*boton comprar*/
+.boton-comprar {
+  margin: 10px 0; /*margen arriba y abajo*/
+  padding: 5px 10px; /*espacio interno*/
+  background-color: #1e2e1f; /*color de fondo*/
+  border: none; /*quita borde*/
+  color: white; /*color letra*/
+  font-weight: bold; /*negrita*/
+  border-radius: 10px; /*redondeado*/
+  transition: 0.3s; /*transicion para hover*/
+  cursor: pointer; /*cambia el cursor al pasar por encima*/
+}
+.boton-comprar:hover {
+  background-color: #a52a2a; /*color al pasar el raton*/
+}
+
+/*bloque inferior*/
+.bloque-inferior {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #1e2e1f;
+  background-color: #d2e6cd;
+  padding-bottom: 18px; /* Volver al padding original */
+}
+.bloque-inferior-h2 {
+  text-align: center; /*centra el texto horizontalmente*/
+  width: 100%; /*ancho completo*/
+  padding-bottom: 15px; /*espacio interno por debajo*/
+  padding-top: 10px; /*espacio interno por encima*/
+}
+.experiencias-1,
+.experiencias-2 {
+  position: relative; /*permite colocar elementos encima*/
+  display: flex; /*activa flexbox para poner los elementos en fila*/
+  gap: 20px; /*separacion horizontal entre los elementos*/
+  align-items: center; /*centra verticalmente los elementos*/
+  justify-content: center; /*centra horizontalmente los elementos*/
+  width: 100%; /*ancho completo*/
+  overflow: hidden; /*lo que sobra lo oculta*/
+  padding-bottom: 20px; /*espacio interno por debajo*/
+}
+
+@media (min-width: 768px) {
+  .experiencia-3, .experiencia-6 { /*pantalla portatil*/
+    display: block; /*muestra los elementos*/
+  }
+}
+
+.experiencia-1, .experiencia-2, .experiencia-3,
+.experiencia-4, .experiencia-5 , .experiencia-6 {
+  background: rgb(164, 196, 154); /*color de fondo*/
+  border: 1px solid rgb(164, 196, 154); /*borde*/
+  border-radius: 10px; /*redondeado*/
+  padding: 10px; /*espacio interno*/
+  text-align: center; /*centra el texto horizontalmente*/
+  width: 235px; /*ancho del pack*/
+  height: 210px; /*alto fijo*/
+}
+.experiencia-1 h4, .experiencia-2 h4, .experiencia-3 h4,
+.experiencia-4 h4, .experiencia-5 h4, .experiencia-6 h4 {
+  margin: 5px; /*margen*/
+}
+.experiencia-1 img, .experiencia-2 img, .experiencia-3 img,
+.experiencia-4 img, .experiencia-5 img, .experiencia-6 img {
+  width: 90%; /*ocupa el 90% del ancho del contenedor*/
+  height: 126px; /*altura fija*/
+  border-radius: 10px; /*redondeado*/
+  transition: 0.3s; /*transicion para hover*/
+  overflow: hidden; /*lo que sobra lo oculta*/
+}
+.experiencia-1 img:hover, .experiencia-2 img:hover, .experiencia-3 img:hover,
+.experiencia-4 img:hover, .experiencia-5 img:hover, .experiencia-6 img:hover {
+  transform: scale(1.05); /*zoom al pasar el raton*/
+}
+.acciones {
+  align-items: center; /*centra verticalmente los elementos*/
+  justify-content: center; /*centra horizontalmente los elementos*/
+  display: flex; /*activa flexbox para poner los elementos en fila*/
+}
+.boton-ver-mas {
+  margin-right: 5px; /*margen a la derecha*/
+  margin: 10px 0; /*margen arriba y abajo*/
+  padding: 5px 10px; /*espacio interno*/
+  background-color: #1e2e1f; /*color de fondo*/
+  border: none; /*quita borde*/
+  font-weight: bold; /*negrita*/
+  border-radius: 10px; /*redondeado*/
+  transition: 0.3s; /*transicion para hover*/
+  text-decoration: none; /*quita subrayado*/
+  color: white; /*color letra*/
+  font-size: 13px; /*tamaño letra*/
+}
+.boton-ver-mas:hover {
+  background-color: #a52a2a; /*color al pasar el raton*/
+}
+.boton-like {
+  padding: 5px 10px; /*espacio interno*/
+  margin: 10px 0; /*margen arriba y abajo*/
+  margin-left: 5px; /*margen a la izquierda*/
+  transition: 0.3s; /*transicion para hover*/
+  text-decoration: none; /*quita subrayado*/
+  font-size: 25px; /*tamaño letra*/
+  color: #a52a2a; /*color letra*/
+}
+.boton-like:hover {
+  transform: scale(1.5); /*zoom al pasar el raton*/
+}
+
+
+/*contenedor derecho*/
+.contenedor-derecho {
+  flex: 1; /*ocupa 1/3*/
+  display: flex; /*activa flexbox para poner los elementos en columna*/
+  background-color: #d2e6cd; /*color de fondo*/
+  border: 3px solid #1e2e1f; /*borde*/
+  margin: 10px; /*margen alrededor del contenedor*/
+  flex-direction: column; /*organiza en columna*/
+  /* QUITAR ESTAS LÍNEAS QUE CAUSAN EL PROBLEMA:
+  min-height: calc(100vh - 20px);
+  height: auto; */
+}
+
+@media (min-width: 768px) { /*pantalla portatil*/
+  .contenedor-derecho {
+    position: sticky; /*permite que el contenedor se quede fijo al hacer scroll*/
+    top: 0; /*distancia desde la parte superior*/
+    align-self: flex-start; /*alinea al inicio del contenedor padre*/
+    /* QUITAR ESTAS LÍNEAS TAMBIÉN:
+    min-height: 100vh;
+    height: auto; */
+  }
+}
+
+/*formulario de acceso*/
+.formulario-acceso {
+  padding: 15px; /*espacio interno*/
+  display: flex; /*activa flexbox para poner los elementos en columna*/
+  flex-direction: column; /*organiza en columna*/
+}
+.formulario-acceso label {
+  display: block; /*para que ocupe toda la linea*/
+  font-weight: bold; /*negrita*/
+}
+.formulario-acceso input[type="text"], .formulario-acceso input[type="password"] {
+  width: 100%; /*ocupa todo el ancho del contenedor*/
+  padding: 8px; /*espacio interno*/
+  margin-bottom: 10px; /*margen por debajo*/
+  border: 1px solid #bababa;  /*color borde*/
+  border-radius: 10px; /*redondeado*/ 
+  box-sizing: border-box; /*quita problemas de salida de margen*/
+}
+.checkbox {
+  display: flex; /*activa flexbox para poner los elementos en fila*/
+  align-items: center; /*centra verticalmente los elementos*/
+  margin-top: 5px; /*margen por encima*/
+  margin-bottom: 10px; /*margen por debajo*/
+  font-size: 13px; /*tamaño letra*/
+}
+.checkbox label {
+  font-weight: lighter; /*letra normal*/
+  cursor: pointer; /*cambia el cursor al pasar por encima*/
+}
+.botones-formulario {
+  display: flex; /*activa flexbox para poner los elementos en fila*/
+  gap: 10px; /*separacion horizontal entre los elementos*/
+  margin-bottom: 10px; /*margen por debajo*/
+}
+.boton-sesion,
+.boton-registro {
+  display: block; /*para que ocupe toda la linea*/
+  width: 100%; /*ocupa todo el ancho del contenedor*/
+  flex: 1; /*ocupa 1/3*/
+  background-color: #e3e1e1; /*color de fondo*/
+  border: 1.5px solid #6a6a6a; /*borde*/
+  color: rgb(0, 0, 0); /*color letra*/
+  font-weight: bold; /*negrita*/
+  padding: 10px; /*espacio interno*/
+  border-radius: 10px; /*redondeado*/
+  transition: 0.3s; /*transicion para hover*/
+  cursor: pointer; /*cambia el cursor al pasar por encima*/
+}
+.boton-sesion:hover, .boton-registro:hover {
+  background-color: #a1a1a1; /*color al pasar el raton*/
+} 
+
+/* secciones laterales*/
+.seccion-lateral {
+  font-size: 18px; /*tamaño letra*/
+  list-style: none; /*quita los puntos de la lista*/
+  display: flex; /*activa flexbox para poner los elementos en columna*/
+  text-align: left; /*alinea el texto a la izquierda*/
+  padding: 15px; /*espacio interno*/
+  display: flex; /*activa flexbox para poner los elementos en columna*/
+  flex-direction: column; /*organiza en columna*/
+}
+.seccion-lateral ul {
+  list-style: none; /*quita los puntos de la lista*/
+  margin: 0; /*quita margen por defecto*/
+  padding: 0; /*quita padding por defecto*/
+}
+.seccion-lateral h3 {
+  text-align: left; /*alinea el texto a la izquierda*/
+  width: 100%; /*ancho completo*/
+  margin: 0; /*quita margen por defecto*/
+  margin-bottom: 12px; /*margen por debajo*/
+  padding: 0; /*quita padding por defecto*/
+}
+.seccion-lateral a {
+  color: #000000;   /*color letra*/
+  text-decoration: none;  /*quita subrayado*/
+  padding-left: 15px;   /*espacio a la izquierda*/
+  font-size: 16px;    /*tamaño letra*/
+  display: block; /*para que ocupe toda la linea*/
+  margin-bottom: 12px;    /*margen por debajo*/
+}
+.seccion-lateral a:hover {
+  color: #a52a2a; /*color al pasar el raton*/
+  font-weight: bold;  /*negrita*/
+}
+
+/*Pie de pagina*/
+.pie-pagina {
+  background-color: rgb(164, 196, 154); /*color de fondo*/
+  display: flex; /*activa flexbox para poner los elementos en fila*/               
+  justify-content: space-between; /*distribucion horizontal entre los elementos*/
+  align-items: center;        /*alineacion vertical de los elementos*/
+  padding: 20px 20px;        /*espacio interno arriba,abajo,izquierda y derecha*/
+  margin: 10px;             /*margen alrededor del pie de pagina*/
+  border: 3px solid #1e2e1f;  /*borde*/
+  font-size: 16px;       /*tamaño letra*/
+}
+/*enlaces*/
+.pie-pagina div a {
+  text-decoration: none;  /*quita subrayado*/
+  color: inherit;   /*color letra*/
+  margin-right: 20px;         /*margen a la derecha*/
+}
+.pie-pagina div a:hover {
+  color: #a52a2a; /*color al pasar el raton*/
+  font-weight: bold; /*negrita*/
+}
+/*redes */
+.pie-pagina nav ul {
+  list-style: none;        /*quita los puntos de la lista*/
+  display: flex;           /*activa flexbox para poner los elementos en fila*/
+  gap: 10px;              /*separacion horizontal entre los elementos*/
+  margin: 0;              /*quita margen por defecto*/
+  padding: 0;             /*quita padding por defecto*/
+}
+/*iconos*/
+.pie-pagina nav img {
+  width: 48px; /*ancho*/
+  height: 48px; /*alto*/
+}
+.pie-pagina nav img:hover {
+  transform: scale(1.25); /*efecto al pasar el raton*/
+}
+
+
+/*RESPONSIVE*/
+
+@media (max-width: 600px) { /*MOVIL*/
+   
+  /*CABECERA*/
+  .cabecera {
+    flex-direction: column;   /*poner cabecera en columnas*/
+    gap: 15px;                 /*espacio entre elementos*/
+  }
+  .nombre-web {
+    font-size: 17px;  /*tamaño letra*/
+    text-align: center;
+  }
+  .menu-navegacion ul {
+    flex-direction: column;  /*menu en columna*/
+    gap: 6px;                 /*espacio entre opciones*/
+  }
+  .selector-idioma {
+    width: 50px; /*ancho del selector de idioma*/
+    padding: 3px; /*espacio interno*/
+  }
+  .logo {
+    height: auto;       /*altura auto*/ 
+    margin-top: 15px;   /*margen para que se vea igual*/
+  }
+  .logo img {
+    height: 30px;     /*tamano logo*/
+  }
+  .cuerpo-principal {
+    flex-direction: column;  /*poner contenedores en columna*/
+  }
+  .contenedor-izquierdo, .contenedor-derecho {
+    margin-top:0;          /*quita margen*/
+  }
+  .carrusel-imagenes {
+    gap: 0; /*espacio entre packs*/
+  }
+  .flecha-izquierda, .flecha-derecha {
+    cursor: pointer; /*cambia el cursor al pasar por encima*/
+  }
+
+  /*.experiencia-5 , .experiencia-6,
+  .experiencia-3, .experiencia-2 {
+    display: none;  
+  }*/
+  .experiencias-1, .experiencias-2 {
+    flex-direction: column; /*poner experiencias en fila*/
+  }
+
+  /*VERSION-A.HTML*/
+  .contenido-principal {
+    margin: 10px;               /*margen*/
+    padding: 10px;          /*espacio interno*/
+  }
+  .nombre-apellidos-forms,
+  .email-forms,
+  .usuario-forms {
+      grid-template-columns: 1fr; /*una columna*/
+  }
+  .btn-datos {
+      width: 50%;          /*tamaño boton*/
+      padding: 10px;       /*espacio interno*/
+  }
+
+  .fecha-nacimiento-forms {
+      display: block;          /*Para que la fecha de nacimiento y el input se quede uno encima de otro*/
+}
+
+  /*VERSION-C.HTML*/
+  /*contenedor general*/
+  .contenedor-compra {
+      flex-direction: column;  /*en columna las dos secciones*/
+      gap: 10px;                /*margen de 10px entre secciones*/
+  }
+  /*pack y formulario*/
+  .pack-info,
+  .formulario-compra {
+      flex: 1 1 100%;  /*cada columna usa todo el ancho y se adapta a flex*/
+  }
+  /*titulo y precio*/
+  .pack-header {
+      gap: 12px;
+      top: 5%;        /*posicion arriba respecto imagen*/
+      left: 5%;       /*posicion izquierda respecto imagen*/
+      right: 5%;      /*posicion derecha respecto imagen*/
+  }
+  .pack-header h2,
+  .precio {
+      font-size: 16px;      /*tamaño texto*/
+      padding: 3px 3px;     /*espaciado interno header y precio*/
+  }
+  /*subtexto sobre la imagen*/
+  .pack-intro p {
+      font-size: 12px;    /*tamaño letra*/
+      padding: 3px 6px;     /*espacio interno*/
+      top: 20%;             /*posicion arriba respecto imagen*/
+      left: 5%;           /*posicion izquierda respecto imagen*/
+      right: 5%;           /*posicion derecha respecto imagen*/
+  }
+  /*inputs de fecha y CVV*/
+  .fecha-cvv {
+      flex-direction: column;  /*en columna el bloque de fecha y cvv*/
+      gap: 30px;                /*espacio entre fecha y cvv*/
+  }
+  .cvv input {
+      width: 40%;             /*tamano input cvv*/
+  }
+  /*botones*/
+  .botones {
+      flex-direction: column;   /*botones en columnas*/
+      gap: 10px;                 /*espacio entre botones*/
+  }
+  
+  /*PIE PAGINA*/
+  .pie-pagina {
+    flex-direction: column;     /*secciones en columna*/
+    text-align: center;       /*centrar*/
+    gap: 15px;                /* espacio entre secciones*/
+  }
+  /*enlaces*/
+  .pie-pagina div a {
+    display: block;           /*enlaces en vertical*/
+    margin: 5px 0;            /*espacio entre enlaces*/
+  }
+  /*redes*/
+  .pie-pagina nav ul {
+    gap: 30px;                /*espacio entre iconos */
+  }
+  .pie-pagina nav img {
+    width: 36px;   /*ancho icono*/
+    height: 36px;  /*alto icono*/
+  }
+
+}
+
+@media (max-width: 768px) and (min-width:600px){ /*tablet*/
+  .carrusel-imagenes {
+    gap: 10px; /*espacio entre packs*/
+  }
+
+  .exp {
+    flex-direction: row; /*poner experiencias en fila*/
+    display: flex;
+  }
+  .experiencias-1, .experiencias-2 {
+    flex-direction: column; /*poner experiencias en columna*/
+    width: 50%; /*cada experiencia ocupa la mitad del contenedor*/
+    display: flex; /*activa flexbox*/
+  }
+
+  .cuerpo-principal {
+    flex-direction: column;  /*poner contenedores en columna*/
+  }
+  .contenedor-izquierdo, .contenedor-derecho {
+    margin-top:0;          /*quita margen*/
+  }
+
+
+  /*CABECERA*/
+    .cabecera {
+    flex-direction: column;   /*poner cabecera en columnas*/
+    gap: 15px;                 /*espacio entre elementos*/
+  }
+  .nombre-web {
+    font-size: 17px;  /*tamaño letra*/
+  }
+  .menu-navegacion ul {
+    flex-direction: row;  /*menu en fila*/
+    gap: 9px;                 /*espacio entre opciones*/
+  }
+  .selector-idioma {
+    width: 50px; /*ancho del selector de idioma*/
+    padding: 3px; /*espacio interno*/
+  }
+  .logo {
+    height: auto;       /*altura auto*/ 
+    margin-top: 15px;   /*margen para que se vea igual*/
+  }
+  .logo img {
+    height: 30px;     /*tamano logo*/
+  }
+
+  /*PIE PAGINA*/
+  .pie-pagina {
+    flex-direction: column;     /*secciones en columna*/
+    text-align: center;       /*centrar*/
+    gap: 15px;                /* espacio entre secciones*/
+  }
+  /*enlaces*/
+  .pie-pagina div a {
+    display: block;           /*enlaces en vertical*/
+    margin: 5px 0;            /*espacio entre enlaces*/
+  }
+  /*redes*/
+  .pie-pagina nav ul {
+    gap: 30px;                /*espacio entre iconos */
+  }
+  .pie-pagina nav img {
+    width: 36px;    /*ancho icono*/
+    height: 36px;   /*alto icono*/
+  }
+
+  /*version-a.html*/
+  .contenido-principal {
+    margin: 10px;               /*margen*/
+    padding: 10px;          /*espacio interno*/
+  }
+
+  /*version-c*/
+  /*contenedor general*/
+  .contenedor-compra {
+      flex-direction: column;  /*en columna las dos secciones*/
+      gap: 10px;                /*margen de 10px entre secciones*/
+  }
+  /*pack y formulario*/
+  .pack-info,
+  .formulario-compra {
+      flex: 1 1 100%;  /*cada columna usa todo el ancho y se adapta a flex*/
+  }
+  /*titulo y precio*/
+  .pack-header {
+      top: 5%;        /*posicion arriba respecto imagen*/
+      left: 5%;       /*posicion izquierda respecto imagen*/
+      right: 5%;      /*posicion derecha respecto imagen*/
+  }
+  .pack-header h2,
+  .precio {
+      font-size: 16px;      /*tamaño texto*/
+      padding: 3px 3px;     /*espaciado interno header y precio*/
+  }
+  /*subtexto sobre la imagen*/
+  .pack-intro p {
+      font-size: 12px;    /*tamaño letra*/
+      padding: 3px 6px;     /*espacio interno*/
+      top: 15%;             /*posicion arriba respecto imagen*/
+      left: 5%;           /*posicion izquierda respecto imagen*/
+      
+  }
+  /*inputs de fecha y CVV*/
+  .fecha-cvv {
+      flex-direction: column;  /*en columna el bloque de fecha y cvv*/
+      gap: 30px;                /*espacio entre fecha y cvv*/
+  }
+  .cvv input {
+      width: 40%;             /*tanaño input cvv*/
+  }
+  /*botones*/
+  .botones {
+      flex-direction: column;   /*botones en columnas*/
+      gap: 10px;                 /*espacio entre botones*/
+  }
+  .botones button {
+      width: 100%;        /*ocupa todo el contenedor*/
+      padding: 10px;       /*espacio interno botones*/
+  }
+}
+
+/*buscador de destinos*/
+.buscador-destinos {
+  padding: 12px; /*espacio interno*/
+  box-sizing: border-box; /*incluye el padding en el tamaño total*/
+}
+.buscador-destinos label {
+  display: block; /*para que ocupe toda la linea*/
+  margin-top: 8px; /*margen por encima*/ 
+  font-weight: 600; /*negrita*/
+}
+.buscador-destinos fieldset {
+  border: none; /*quitar borde por defecto del fieldset*/
+  padding: 0; /*quitar padding por defecto del fieldset*/
+  margin: 0; /*quitar margen por defecto del fieldset*/
+}
+.buscador-destinos select,
+.buscador-destinos input[type="number"] {
+  width: 100%; /*ocupa todo el ancho del contenedor*/
+  padding: 8px; /*espacio interno*/ 
+  margin-top: 4px; /*margen por encima*/
+  border-radius: 8px; /*redondeado*/
+  border: 1px solid #bababa; /*borde*/
+  box-sizing: border-box; /*incluye el padding en el tamaño total*/
+}
+.botones-buscador {
+  display: flex; /*activa flexbox para poner los elementos en fila*/
+  gap: 8px; /*separacion horizontal entre los elementos*/
+  margin-top: 10px; /*margen por encima*/
+}
+.botones-buscador button {
+  flex: 1; /*ocupa el mismo espacio*/
+  padding: 8px 10px; /*espacio interno*/
+  border-radius: 8px; /*redondeado*/
+  border: none; /*quitar borde*/
+  background-color: #1e2e1f; /*color de fondo*/
+  color: white; /*color letra*/
+  cursor: pointer; /*cambia el cursor al pasar por encima*/
+}
+.botones-buscador button#btn-reset {
+  background-color: #6a6a6a; /*color gris para reset*/
+}
+#resultados-buscador {
+  margin-top: 12px; /*margen por encima*/
+}
+.resultado-destino { 
+  display: flex; /*activa flexbox para poner los elementos en fila*/
+  gap: 6px; /*separacion horizontal entre elementos*/
+  padding: 6px; /*espacio interno*/
+  border-radius: 8px; /*redondeado*/
+  background: rgb(164, 196, 154); /*color de fondo*/
+  align-items: center; /*alinear verticalmente al centro*/
+  margin-bottom: 8px;
+}
+.resultado-destino img {
+  width: 80px; /*ancho imagen*/
+  height: 60px; /*alto imagen*/
+  object-fit: cover; /*ajustar imagen sin deformar*/
+  border-radius: 6px; /*redondeado*/
+}
+.resultado-destino .meta {
+  flex: 1; /*ocupa todo el espacio disponible*/
+}
+.resultado-destino .meta h4 {
+  margin: 0 0 2px 0; /*margen inferior reducido*/
+}
+/*reducir espacio entre ttulo y características*/
+.resultado-destino .meta p,
+.resultado-destino .meta .caracteristicas,
+.resultado-destino .meta small {
+  margin: 0; /* quitar márgenes para compactar */
+  padding: 0; /* quitar padding para compactar */ 
+  line-height: 1.15; /* reducir espacio entre lineas */
+  font-size: 14px; /* tamaño de letra ligeramente menor */
+}
+.resultado-destino .acciones-result {
+  display: flex; /* contenedor flex para los botones */
+  flex-direction: column; /* apilar botones verticalmente */
+  gap: 1px; /* reducir espacio entre acciones */
+  align-items: center; /* centrar botones horizontalmente */
+  width: 36%; /* ajustar ancho del contenedor de acciones */
+  max-width: 180px; /* limitar ancho maximo para pantallas grandes */
+  min-width: 110px; /* asegurar un ancho minimo para pantallas pequeñas */
+}
+.resultado-destino .ver-link {
+  display: inline-flex; /* usar inline-flex para centrar contenido */
+  align-items: center; /* centrar verticalmente */
+  justify-content: center; /* centrar horizontalmente */
+  color: black; /* color del texto */
+  text-decoration: none; /* quitar subrayado */
+  padding: 5px 10px; /* espacio interno */ 
+  background-color: #d2e6cd; /* fondo verde claro */
+  border-radius: 10px; /* bordes redondeados */
+  font-weight: bold; /* texto en negrita */
+  font-size: 13px; /* tamaño de letra */
+  transition: 0.3s; /* transición suave */
+  box-sizing: border-box; /* incluir padding en el tamaño total */
+  white-space: nowrap; /* evitar que el texto se divida en varias lineas */
+  width: 100%; /* rellenar el ancho del contenedor de acciones */
+}
+.resultado-destino .ver-link:hover {
+  background-color: #a52a2a; /* fondo rojo al pasar el raton */
+  color: white; /* texto en blanco */
+}
+.fav-btn { 
+  display: inline-flex; /* usar inline-flex para centrar contenido */
+  align-items: center; /* centrar verticalmente */
+  justify-content: center; /* centrar horizontalmente */
+  line-height: 1; /* ajustar altura de linea para icono */
+  margin: 0; /* quitar margen extra para evitar espacio adicional cuando esta apilado */
+  padding: 5px 10px; /* igual que boton-comprar */
+  background-color: #1e2e1f; /* mismo diseño que Comprar */
+  border: none; /* quitar borde */
+  color: white; /* color del texto */
+  font-weight: bold; /* texto en negrita */
+  border-radius: 10px; /* bordes redondeados */
+  transition: 0.3s; /* transicion suave */
+  cursor: pointer; /* cambiar cursor al pasar por encima */
+  width: 100%; /* rellenar el ancho del contenedor de acciones */
+  text-align: center; /* centrar texto */
+  white-space: nowrap; /* evitar que el texto se divida en varias lineas */
+}
+.fav-btn:hover {
+  background-color: #a52a2a; /* fondo rojo al pasar el raton */
+}
+
+/* Estado visual cuando ya es favorito: fondo blanco y texto rojo */
+.fav-btn.is-favorito {
+  background-color: #ffffff; /* fondo blanco cuando es favorito */
+  color: #a52a2a; /* texto rojo cuando es favorito */
+  border: 1px solid #a52a2a; /* borde rojo cuando es favorito */
+}
+.fav-btn.is-favorito:hover {
+  background-color: #a52a2a; /* fondo rojo al pasar el raton */
+  color: #ffffff; /* texto blanco al pasar el raton */
+}
+.visor-favoritos {
+  margin-top: 8px; /*margen por encima*/
+  font-size: 14px; /*tamaño letra*/
+}
+
+
+@media (max-width: 600px) {
+  .resultado-destino img { width: 64px; height: 48px; } /* tamaño imagen para pantallas pequeñas */
+  .botones-buscador { flex-direction: column; } /* apilar botones en columna */
+  .resultado-destino .acciones-result { flex-direction: column; align-items: flex-start; } /* apilar acciones en columna y alinear a la izquierda */
+  .fav-btn { min-width: unset; } /* quitar ancho minimo para boton favorito */
+  .resultado-destino .ver-link { min-width: unset; } /* quitar ancho minimo para enlace ver */
+}
+
+/* utilidad para accesibilidad visual-hidden */
+.visually-hidden {
+  position: absolute !important; /* posicionar fuera del flujo para accesibilidad */
+  height: 1px; width: 1px; /* tamaño minimo para accesibilidad */
+  overflow: hidden; /*oculta el desbordamiento*/
+  clip: rect(1px, 1px, 1px, 1px); /* recorta el area visible */
+  white-space: nowrap; /* evita que el elemento ocupe espacio */
+}

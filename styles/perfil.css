@@ -1,0 +1,756 @@
+#perfil-contenedor {
+  padding: 20px; /* espacio interno */
+  padding-top: 8px; /* espacio interno superior */
+  background: #d2e6cd; /* color de fondo */
+  margin: 0 0 10px 0;
+  border: 3px solid #1e2e1f;
+  width: 100%; /* Ocupa todo el ancho disponible */
+  box-sizing: border-box; /* Incluye el padding y el borde en el ancho */
+}
+
+.banner h2 {
+  background-color:#333;
+}
+
+#perfil-contenedor h2, .perfil-compras-section h2, .perfil-consejos-section h2,
+#compas-viaje-section h2 {
+  text-align: center; /*centra el texto horizontalmente*/
+  width: 100%; /*ancho completo*/
+  margin-bottom: 10px; /*margen por debajo*/
+}
+
+#perfil-cuerpo {
+  display: flex; /* contenedor flexible */
+  flex-direction: row;      /* Cambia a fila para alinear horizontalmente */
+  gap: 32px;                /* Más espacio entre foto y datos */
+  align-items: center;      /* Centra verticalmente */
+}
+
+#perfil-cuerpo > img#perfil-foto {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+#perfil-cuerpo > div {
+  margin-right: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#perfil-foto {
+  width: 150px; /* ancho fijo */
+  height: 150px; /* alto fijo */
+  object-fit: cover; /* ajustar contenido */
+  border-radius: 50%; /* forma circular */
+  border: 3px solid #1e2e1f; /* borde */
+}
+
+#perfil-nombre {
+  font-weight: 700; /* negrita */
+  margin: 0 0 15px 0; /* margen inferior */
+}
+
+#perfil-email {
+  margin: 0 0 15px 0; /* margen inferior */
+  color: #555; /* color gris */
+}
+
+#perfil-favoritos {
+  min-height: 40px; /* altura minima */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* estilos para la lista de favoritos generada por JS */
+#perfil-favoritos ul {
+  list-style: none; /* sin viñetas */
+  padding: 0; /* sin relleno */
+  margin: 0; /* sin margen */
+}
+
+#perfil-favoritos a {
+  text-decoration: none; /* sin subrayado */
+  color: inherit; /* hereda color */
+  display: flex; /* contenedor flexible */
+  align-items: center; /* alinear verticalmente */
+  gap: 8px; /* espacio entre elementos */
+}
+
+#perfil-favoritos img:not(.perfil-fav-img) {
+  width: 56px; /* ancho */
+  height: 40px; /* alto */
+  object-fit: cover; /* ajustar contenido */
+  border-radius: 6px; /* bordes redondeados */
+}
+
+#form-cambiar-pass {
+  display: flex;
+  flex-direction: row;         /* Elementos en fila */
+  flex-wrap: wrap;             /* Permite salto de línea si no cabe */
+  align-items: flex-end;       /* Alinea los campos abajo */
+  gap: 6px 8px; /* Menos espacio entre campos y filas */
+  margin-left: 0;
+  margin-top: 24px;
+  padding: 0px;
+  min-width: 220px;
+  max-width: 100%;
+  align-self: flex-start;
+}
+
+#form-cambiar-pass h4 {
+  flex-basis: 100%;
+  margin: 0 0 4px 0;
+  font-size: 1.08rem;
+  color: #1e2e1f;
+}
+
+#form-cambiar-pass label,
+#form-cambiar-pass input[type="password"] {
+  margin-bottom: 0;
+  margin-right: 0;
+}
+
+#form-cambiar-pass label {
+  font-size: 0.97rem;
+  color: #333;
+  flex-basis: 100%;
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+#form-cambiar-pass input[type="password"] {
+  padding: 5px 7px;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+  font-size: 0.97rem;
+  min-width: 160px;
+  flex: 1 1 160px;
+}
+
+#form-cambiar-pass button[type="submit"] {
+  margin-top: 0;
+  padding: 7px 14px;
+  background-color: #e3e1e1; /*color de fondo*/
+  border: 1.5px solid #6a6a6a; /*color borde*/
+  color: #222;
+  border-radius: 5px;
+  font-size: 0.97rem;
+  cursor: pointer;
+  transition: 0.2s;
+  height: 34px;
+  align-self: flex-end;
+}
+
+#form-cambiar-pass button[type="submit"]:hover {
+  background: #a1a1a1;
+}
+
+#pass-msg {
+  min-height: 18px;
+  font-size: 0.97rem;
+  margin-top: 0;
+  color: #dc3545;
+  flex-basis: 100%;
+}
+
+#pass-msg.pass-ok {
+  color: #218838;
+}
+
+.perfil-label {
+  font-weight: 600;
+  color: #222;
+  margin-right: 4px;
+}
+
+/* Responsive: apila el formulario en columna en móvil */
+@media (max-width: 600px) {
+  #form-cambiar-pass input[type="password"] {
+    min-width: 0;
+    width: 100%;
+  }
+  #form-cambiar-pass button[type="submit"] {
+    width: 100%;
+    align-self: stretch;
+    margin-top: 10px;
+  }
+}
+
+.perfil-compras-section, .perfil-consejos-section {
+  border: 3px solid #1e2e1f; /*borde*/
+  background-color: #d2e6cd; /*color de fondo*/
+  padding: 20px; /* espacio interno */
+  padding-top: 8px; /* espacio interno superior */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* permitir posicionamiento absoluto de las flechas respecto a la sección */
+.perfil-compras-section { position: relative; }
+
+.perfil-consejos-section {
+  margin-top: 20px;
+}
+
+/* Contenedor de compras: visible y con estilo tipo "pack" */
+#perfil-compras {
+  background: rgb(164, 196, 154);
+  border: 1px solid rgb(164, 196, 154);
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  height: auto;
+  box-sizing: border-box;
+}
+
+#perfil-compras ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap; /* evitar que las cards salten a otra fila: carrusel horizontal */
+  align-items: flex-start;
+  justify-content: flex-start; /* alinear al inicio para que el scroll funcione correctamente */
+}
+
+/* envoltura del carrusel de compras */
+.perfil-compras-wrap {
+  position: relative;
+}
+.perfil-compras-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.perfil-compras-viewport::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+/* flechas laterales */
+.perfil-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(30,46,31,0.95);
+  color: #fff;
+  border: none;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+/* posicionar las flechas dentro de los laterales izquierdo/derecho del viewport */
+.perfil-prev { left: 8px; }
+.perfil-next { right: 8px; }
+
+/* Mantener visibles las flechas dentro de la sección de consejos en todos los tamaños */
+.perfil-consejos-section .perfil-prev,
+.perfil-consejos-section .perfil-next {
+  display: flex !important;
+}
+
+/* Cada compra: rectángulo vertical (imagen arriba, título, fecha, botón abajo) */
+#perfil-compras ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  background: rgb(164, 196, 154);
+  border: 1px solid rgb(164, 196, 154);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0;
+  width: 200px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#perfil-compras ul li img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+#perfil-compras ul li .compra-info {
+  width: 100%;
+  padding: 4px 6px;
+  box-sizing: border-box;
+}
+
+#perfil-compras ul li .compra-info strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #1e2e1f;
+}
+
+#perfil-compras ul li .compra-fecha {
+  font-size: 0.88rem;
+  color: #333;
+}
+
+/* Reusar estilo de botón similar a .boton-comprar */
+#perfil-compras ul li button,
+#perfil-compras ul li .boton-comprar {
+  background-color: #1e2e1f;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 7px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  width: calc(100% - 20px);
+  margin-bottom: 2px;
+}
+
+#perfil-compras ul li button:hover,
+#perfil-compras ul li .boton-comprar:hover {
+  background-color: #a52a2a;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 600px) {
+  /* Mostrar una sola tarjeta por vista en móviles SIN cambiar el tamaño
+     de las tarjetas (mantener 200px). Para ello limitamos el ancho del
+     viewport al ancho de la tarjeta y centramos el wrap; el resto de
+     tarjetas quedan accesibles por scroll y flechas. */
+  /* Ancho fijo por diseño de tarjeta (coincide con #perfil-compras ul li width) */
+  .perfil-compras-viewport {
+    width: 200px;
+    max-width: 100%;
+    margin: 0 auto; /* centrar en la sección */
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+
+  #perfil-compras ul {
+    display: flex;
+    gap: 20px; /* mantener el gap original */
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  /* Mantener tamaño original de cada tarjeta */
+  #perfil-compras ul li {
+    flex: 0 0 auto;
+    width: 200px; /* no se cambia el tamaño de la tarjeta */
+    min-width: 200px;
+    box-sizing: border-box;
+    scroll-snap-align: center;
+    margin: 0;
+  }
+
+  /* Imágenes siguen siendo 200x200 dentro de la tarjeta */
+  #perfil-compras ul li img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+.perfil-favs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 6px; /* deja espacio para scroll visual si aparece */
+  justify-content: center;
+}
+.perfil-fav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  background: rgb(164, 196, 154);
+  border: 1px solid rgb(164, 196, 154);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0;
+  width: 220px;
+  min-width: 220px;
+  min-height: 220px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.perfil-fav-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.perfil-fav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+#perfil-favoritos-section .perfil-fav-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.perfil-fav-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e2e1f;
+  display: block;
+  max-width: 100%;
+}
+.perfil-fav-view-btn {
+  width: calc(100% - 20px);
+  margin: 0;
+  background: #1e2e1f;
+  border: none;
+  color: #fff;
+  padding: 7px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.perfil-fav-remove-btn {
+  width: calc(100% - 20px);
+  margin: 0;
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 7px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.perfil-fav-view-btn:hover, .perfil-fav-remove-btn:hover {
+  background: #a52a2a;
+  color: #fff;
+  transition: 300ms;
+}
+
+/* ocultar scrollbars visuales para la lista horizontal de favoritos */
+.perfil-favs-list::-webkit-scrollbar { display: none; }
+.perfil-favs-list { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Mobile: favoritos en columna */
+@media (max-width: 600px) {
+  .perfil-favs-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    overflow: visible;
+  }
+  .perfil-fav-item {
+    width: 100%;
+    min-width: 0;
+    max-width: 320px;
+  }
+  #perfil-favoritos-section .perfil-fav-img {
+    width: 100%;
+    height: auto;
+    max-width: 320px;
+  }
+  .perfil-fav-view-btn,
+  .perfil-fav-remove-btn {
+    width: 100%;
+  }
+}
+
+/* Tablet: favoritos en dos columnas */
+@media (min-width: 600px) and (max-width: 768px) {
+  .perfil-favs-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    overflow: visible;
+  }
+  .perfil-fav-item {
+    width: calc(50% - 12px);
+    min-width: 200px;
+    max-width: 260px;
+  }
+  #perfil-favoritos-section .perfil-fav-img {
+    width: 100%;
+    height: auto;
+    max-width: 240px;
+  }
+  .perfil-fav-view-btn,
+  .perfil-fav-remove-btn {
+    width: 100%;
+  }
+}
+
+/* Styles for consejos list in perfil */
+.perfil-consejos-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: start;
+  justify-items: center;
+}
+
+/* ocultar scrollbars visuales para la lista horizontal */
+.perfil-consejos-list::-webkit-scrollbar { display: none; }
+.perfil-consejos-list { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Responsive para consejos */
+@media (min-width: 600px) and (max-width: 768px) {
+  .perfil-consejos-list {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2px;
+  }
+  .perfil-consejo-item {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .perfil-consejos-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cada consejo se muestra como una tarjeta vertical */
+.perfil-consejo-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgb(164, 196, 154);
+  border: 1px solid rgb(164, 196, 154);
+  border-radius: 10px;
+  padding: 12px;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+}
+.perfil-consejo-title {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 700;
+  color: #1e2e1f;
+  font-size: 1.02rem;
+}
+.perfil-consejo-desc {
+  font-size: 0.95rem;
+  color: #222;
+  line-height: 1.35;
+  max-height: 6.8em; /* evitar tarjetas excesivamente altas */
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.perfil-consejo-media {
+  font-size: 0.9rem;
+  color: #1e2e1f;
+  font-weight: 600;
+  padding-top: 8px;
+  border-top: 1px solid #1e2e1f;
+}
+
+/* Estrella usada en la visualización de la media: relleno amarillo y borde negro */
+.media-star {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 4px;
+}
+.media-star svg, .media-star path {
+  display: block;
+}
+
+/* estilos para chips de tags (perfil) */
+.tag-chip {
+  display: inline-block;
+  background: #fff;
+  color: #1e2e1f;
+  border: 1px solid #1e2e1f;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  margin-right: 6px;
+}
+.tags-container {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Centrar la lista de consejos dentro del contenedor del perfil */
+#perfil-consejos {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Make the compras viewport use smooth scrolling via CSS instead of inline styles */
+.perfil-compras-viewport {
+  scroll-behavior: smooth;
+}
+
+#compas-viaje-section, #perfil-favoritos-section {
+  border: 3px solid #1e2e1f;
+  background-color: #d2e6cd;
+  padding: 20px;
+  padding-top: 8px;
+  margin-top: 20px;
+}
+
+#compas-viaje-section h2, #perfil-favoritos-section h2 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Estilos para centrar el mensaje cuando no hay compañeros */
+#compas-viaje-section p {
+  text-align: center;
+  margin: 20px 0;
+  color: #333;
+}
+
+/* Estilos para los compañeros de viaje */
+#compas-viaje-section img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #1e2e1f;
+  margin-right: 10px;
+}
+
+#compas-viaje-section .compañero-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: rgb(164, 196, 154);
+  border-radius: 8px;
+}
+
+#compas-viaje-section .compañero-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#compas-viaje-section .compañero-nombre {
+  font-weight: 700;
+  color: #1e2e1f;
+  margin: 0;
+}
+
+#compas-viaje-section .compañero-destino {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 0;
+}
+
+.companeros-list {
+  display: grid;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* 1 compañero: centrado */
+.companeros-list:has(.companero-item:only-child) {
+  grid-template-columns: 1fr;
+  max-width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 2 compañeros: 2 columnas */
+.companeros-list:has(.companero-item:nth-child(2)) {
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+/* 3 compañeros: 3 columnas */
+.companeros-list:has(.companero-item:nth-child(3)) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 4 o más compañeros: 4 columnas */
+.companeros-list:has(.companero-item:nth-child(4)) {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Responsive: en móvil siempre 1 columna */
+@media (max-width: 600px) {
+  .companeros-list {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .companeros-list:has(.companero-item:only-child) {
+    max-width: 100%;
+  }
+}
+
+/* Responsive: tablet 2 columnas máximo */
+@media (min-width: 601px) and (max-width: 768px) {
+  .companeros-list:has(.companero-item:nth-child(4)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Separación superior pequeña para la valoración en las tarjetas de 'Mis compras' */
+#perfil-compras ul li .compra-valoracion-media {
+  margin-top: 6px;
+}
+
+.cerrar-sesion-perfil {
+  margin-top: 10px;
+  padding: 7px 14px;
+  background-color: #e3e1e1; /*color de fondo*/
+  border: 1.5px solid #6a6a6a; /*color borde*/
+  color: #222;
+  border-radius: 5px;
+  font-size: 0.97rem;
+  cursor: pointer;
+  transition: 0.2s;
+  height: 34px;
+}
+.cerrar-sesion-perfil:hover {
+  background-color: #a1a1a1;
+  border-color: #555;
+}

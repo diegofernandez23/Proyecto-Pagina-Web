@@ -1,0 +1,201 @@
+/* Modal compartido para páginas de compra (unificado) */
+/* Soporta ambas clases para compatibilidad: .modal-overlay y .modal-c-overlay */
+.modal-overlay,
+.modal-c-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+
+/* si se desea ocultarlo mediante clase */
+.modal-overlay.hidden,
+.modal-c-overlay.hidden {
+  display: none;
+}
+.modal-overlay.is-visible,
+.modal-c-overlay.is-visible {
+  display: flex;
+}
+
+.modal-confirm {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.modal-actions{
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-direction: row-reverse
+}
+.modal-actions button{
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+}
+.modal-confirmar{
+  font-weight: bold;
+  background: rgb(164, 196, 154);
+  color: #000000;
+  border-radius: 4px;
+}
+.modal-confirmar:hover, .modal-cancelar:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+.modal-cancelar{
+  background: #a52a2a;
+  border-radius: 4px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* estilos para modal 'advice' (consejos) */
+.modal-advice .modal-title{
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+.modal-advice .modal-text{
+  text-align: left;
+  line-height: 1.4;
+  max-height: 45vh;
+  overflow-y: auto;
+}
+.modal-advice .modal-close{
+  background: rgb(164, 196, 154);
+  font-weight: bold;
+  border-radius: 4px;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* pequeñas adaptaciones responsive */
+@media (min-width: 600px) {
+  .modal-confirm { max-width: 380px; }
+}
+/* Styles for confirmation modal used in version-c flow */
+.modal-c-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none; 
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-c-dialog {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  max-width: 320px;
+  width: 90%;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.modal-c-title {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.modal-c-text {
+  margin: 0 0 12px 0;
+  color: #333;
+}
+
+.modal-c-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  /* invertir orden para mostrar Sí a la derecha */
+  flex-direction: row-reverse;
+}
+
+.modal-c-btn {
+  padding: 10px 22px;
+  min-width: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+}
+
+/* confirmar = verde claro (estilo style-b) */
+.modal-confirmar,
+.modal-c-btn--primary {
+  font-weight: bold;
+  background: rgb(164, 196, 154);
+  color: #000;
+  border-radius: 4px;
+}
+
+/* cancelar = rojo */
+.modal-cancelar,
+.modal-c-btn--secondary {
+  background: #a52a2a;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* hover effect shared */
+.modal-confirmar:hover, .modal-cancelar:hover, .modal-c-btn--primary:hover, .modal-c-btn--secondary:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+/* Make buttons occupy half width in C-flow split modals */
+.modal-split .modal-actions,
+.modal-split .modal-c-actions {
+  gap: 8px; /* small separation between buttons so rounding is visible */
+}
+.modal-split .modal-actions button,
+.modal-split .modal-c-actions .modal-c-btn,
+.modal-split .modal-c-actions button {
+  /* share available space and remain compact */
+  flex: 1 1 0;
+  max-width: 180px;
+  padding: 6px 10px;
+  min-width: 0;
+  border-radius: 6px; /* rounded corners on each button */
+  border: none;
+  background-clip: padding-box;
+}
+.modal-split .modal-actions button + button,
+.modal-split .modal-c-actions .modal-c-btn + .modal-c-btn,
+.modal-split .modal-c-actions button + button {
+  /* subtle separator on the left edge of the second button */
+  box-shadow: -6px 0 0 rgba(0,0,0,0.03) inset;
+}
+
+/* On narrow screens, stack the buttons full width for usability */
+@media (max-width: 600px) {
+  .modal-split .modal-actions button,
+  .modal-split .modal-c-actions .modal-c-btn,
+  .modal-split .modal-c-actions button {
+    flex: 1 1 100%;
+    max-width: none;
+    border-radius: 6px;
+    margin: 6px 0 0 0;
+    box-shadow: none;
+  }
+  .modal-split .modal-actions,
+  .modal-split .modal-c-actions { flex-direction: column-reverse; gap: 0; }
+}
+

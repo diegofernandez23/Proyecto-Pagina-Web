@@ -1,0 +1,35 @@
+.contenedor-reviews {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+    }
+    .review-tarjeta {
+        background-color: white;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        border-left: 5px solid #0b6623; /* Borde verde para destacar */
+    }
+    .review-tarjeta h3 {
+        margin-top: 0;
+        color: #333;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+    .review-tarjeta .meta-info {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+    }
+    .review-tarjeta .review-texto {
+        font-style: italic;
+        margin-top: 5px;
+        color: #444;
+    }
+    .estrellas-display .bi-star-fill {
+        color: gold;
+    }

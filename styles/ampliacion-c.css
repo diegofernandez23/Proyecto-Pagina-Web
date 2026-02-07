@@ -1,0 +1,110 @@
+/*titulo*/
+#form-ampliacion h2 {
+  text-align: center;         /*centra el titulo horizontalmente*/
+  padding: 15px;            /*espacio interno alrededor del titulo*/
+}
+/*formulario*/
+#form-ampliacion form {
+  display: flex;              /*activa flexbox para organizar los elementos*/
+  flex-direction: column;       /*organiza en columna*/
+  gap: 15px;                /*espacio vertical entre los elementos del formulario*/
+}
+/*inputs de formulario*/
+#form-ampliacion input,
+#form-ampliacion select {
+  padding: 8px;                  /*espacio interno dentro de los inputs y selects*/
+  font-size: 14px;               /*tanaño de letra*/
+  width: 100%;                  /*ocupa todo el ancho del contenedor*/
+  border: 1px solid #bababa;      /*color borde*/
+  border-radius: 10px;        /*redondeado*/
+  box-sizing: border-box;   /*quita problemas de salida de margen*/
+}
+
+/*quitar recuadro gris del fieldset*/
+#form-ampliacion fieldset {
+  border: none;           /*quita el borde gris por defecto*/
+  padding: 0;            /*quita el padding por defecto*/
+  margin: 0;             /*quita el margin por defecto*/
+  background: none;      /*quita cualquier fondo*/
+}
+
+/*telefono de emergencia - label y input en la misma linea*/
+#form-ampliacion label[for="telefono_emergencia"] {
+  display: flex;                    /*activa flexbox*/
+  align-items: center;              /*centra verticalmente*/
+  gap: 10px;                       /*espacio entre el texto y el input*/
+  margin-top: 10px;                /*margen superior*/
+}
+
+#form-ampliacion label[for="telefono_emergencia"] input {
+  width: auto;                     /*el input no ocupa todo el ancho*/
+  flex: 1;                        /*crece para ocupar el espacio disponible*/
+  margin-left: auto;               /*empuja el input hacia la derecha*/
+}
+
+/*estilo para checkboxes y sus labels*/
+#form-ampliacion input[type="checkbox"] {
+  width: auto;                     /*no ocupa todo el ancho*/
+  margin-right: 8px;               /*espacio pequeño entre checkbox y texto*/
+  margin-left: 0;                  /*quita margen izquierdo*/
+}
+
+/*grupo de mascotas - alinear checkbox con texto*/
+.mascotas-group {
+  display: flex;                   /*activa flexbox*/
+  align-items: center;             /*centra verticalmente*/
+  gap: 8px;                        /*espacio pequeño entre elementos*/
+  flex-wrap: wrap;                 /*permite que los elementos bajen a la siguiente línea*/
+  margin-top: 15px;                /*espacio superior con el label de arriba*/
+}
+
+.mascotas-group input[type="checkbox"] {
+  width: auto;                     /*tamaño automático del checkbox*/
+  margin: 0;                       /*quita todos los márgenes*/
+}
+
+.mascotas-group label[for="mascotas_chk"] {
+  margin: 0;                       /*quita margen del label*/
+  white-space: nowrap;             /*evita que el texto se corte*/
+}
+
+/*label de aceptación de términos*/
+.acepto-label {
+  display: flex !important;        /*activa flexbox*/
+  align-items: flex-start;         /*alinea al inicio*/
+  gap: 8px;                        /*espacio pequeño entre checkbox y texto*/
+  margin-top: 20px;                /*espacio superior con el elemento de arriba*/
+}
+
+.acepto-label input[type="checkbox"] {
+  width: auto;                     /*tamaño automático*/
+  margin: 0;                       /*quita márgenes*/
+  margin-top: 2px;                 /*pequeño ajuste vertical*/
+}
+
+/*inputs que se expanden automáticamente*/
+#intolerancias_input,
+#comentarios_adicionales {
+  min-height: 40px;                /*altura mínima*/
+  resize: none;                    /*evita el redimensionado manual*/
+  overflow: hidden;                /*oculta el scroll*/
+  white-space: pre-wrap;           /*respeta los saltos de línea*/
+  word-wrap: break-word;           /*rompe palabras largas*/
+}
+
+/*aplicar a todos los inputs de texto largos*/
+#form-ampliacion input[type="text"]:not(#tipo_mascota) {
+  min-height: 40px;
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+/* Aplicar mismo estilo al botón 'Volver' que usa id="volver" (type=button) */
+.botones button#volver {
+  background-color: #f0a0a0;
+  color: black;
+  border: 1px solid #6a6a6a;
+}
+.botones button#volver:hover {
+  background-color: #c36666;
+}

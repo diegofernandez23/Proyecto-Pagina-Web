@@ -1,0 +1,152 @@
+.nosotros-cuerpo-principal{
+    margin: 10px;
+}
+
+.cuadricula-sobre-nosotros{
+    border: 3px solid #1e2e1f; /*borde*/
+    background-color: #d2e6cd; /*color de fondo*/
+    gap: 50px; /* Espacio entre los componentes de la cuadrícula  */
+    padding: 50px; /* Espacio interno de la cuadrícula */
+    text-align: center; /*centra el texto horizontalmente*/
+}
+
+.cuadro-nuestra-historia{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*en dos columnas */
+    gap: 30px; /* Espacio entre los componentes de la cuadrícula  */
+    padding: 40px; /* Espacio interno de la cuadrícula */
+    align-items: center; /*centra el texto con la imagen*/
+    text-align: center; /*centra el texto horizontalmente*/
+}
+
+.nosotros-h1{/*tipografía nuestra historia*/
+    grid-column: 1 / -1;
+    font-size: 20px;/*tamaño letra*/
+    color: #6f7f6b; /*color del texto*/
+    text-align: center; /*texto justificado*/
+    font-weight: bold; /*Letra más gruesa*/
+    padding: 20px;
+}
+
+.cuadro-nuestra-historia img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.nosotros-texto{
+    font-size: 18px; /*tamaño letra*/
+    margin: 5px 0; /*margen arriba y abajo*/
+    color: #414d3e;
+    text-align: justify;
+}
+
+.cuadro-mision{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 50px;
+    align-items: start;
+    text-align: center;
+}
+
+.mini-cuadro{
+    background-color: #a4c49a87;
+    padding: 15px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    justify-items: center;
+    align-items: start;
+    gap: 10px;
+    height: 100%;
+}
+
+.texto-pequeno{
+    font-size: 14px; /*tamaño letra*/
+    color: #696560;
+    text-align: justify;
+}
+
+.mini-cuadro .nosotros-texto {
+    text-align: center;
+    margin: 0; /* Quitamos el margen extra porque ya usas gap */
+}
+
+.cuadro-equipo{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: stretch;
+    /* que se ajuste a su contendor ( <main class="nosotros-cuerpo-principal">) */
+}
+
+.mini-cuadro2{
+    display: grid;
+    grid-template-rows: auto auto 20px 1fr;
+    justify-items: center;
+    align-items: start; /*centra el texto con la imagen*/
+    gap: 5px;
+    background-color: #a4c49a87;
+    padding: 15px; 
+    border-radius: 8px;
+}
+
+.mini-cuadro2 img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 20%;
+    margin-bottom: 10px; /* Un poco de espacio solo debajo de la foto */
+}
+
+/*quito márgenes por defecto*/
+.mini-cuadro2 h6, 
+.mini-cuadro2 .nosotros-texto {
+    margin: 0; 
+}
+
+.citas{
+    font-size: 16px;
+    color: #000000;
+    align-self: center;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 768px) {
+
+    /* Reducir los espacios generales del contenedor principal */
+    .cuadricula-sobre-nosotros {
+        padding: 20px; /* De 50px a 20px para ganar espacio */
+        gap: 30px;
+    }
+
+    /* Historia: Pasar de 2 columnas a 1 columna */
+    .cuadro-nuestra-historia {
+        grid-template-columns: 1fr; /* Una sola columna */
+        padding: 20px; /* Menos relleno interno */
+        gap: 30px;
+    }
+    /* La imagen ocupará el 100% del ancho disponible */
+    .cuadro-nuestra-historia img {
+        width: 100%; 
+        max-width: 400px;
+        margin: 0 auto; /* Centrar imagen */
+    }
+
+    /* Misión: Pasar de 3 columnas a 1 columna */
+    .cuadro-mision {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 50px; /* Reducimos el gap de 100px a 50px */
+        padding: 20px;
+    }
+
+    /* Equipo: Pasar de 4 columnas a 1 columna */
+    .cuadro-equipo {
+        /* Una persona por fila */
+        grid-template-columns: 1fr; 
+        
+        gap: 30px;
+    }
+}

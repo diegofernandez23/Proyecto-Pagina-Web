@@ -1,0 +1,25 @@
+.compra-aviso {
+	padding: 12px;
+	margin-bottom: 12px;
+	background: #ffe6e6;
+	border: 1px solid #ffb3b3;
+	color: #900;
+}
+
+/* modal styles moved to `styles/modal-c.css` */
+
+.botones button#confirmar {
+  background-color: rgb(168, 209, 155); /* verde primario */
+  color: black;
+}
+.botones button#confirmar:hover {
+  background-color: rgb(130, 167, 120);
+}
+
+.botones button#modificar {
+  background-color: #f0a0a0; /* claro neutro */
+  color: black;
+}
+.botones button#modificar:hover {
+  background-color: #c36666;
+}

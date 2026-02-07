@@ -1,0 +1,273 @@
+/*contenedor general*/
+.contenedor-compra {
+  display: flex;                      /*activa flexbox para poner las columnas en fila*/
+  justify-content: space-between;    /*distribucion horizontal entre las dos columnas*/
+  align-items: stretch;              /*alinea las columnas para que lleguen hasta el final verticalmente*/
+  margin: 10px;                     /*espacio alrededor del contenedor*/
+  gap: 20px;                        /*separación entre columnas*/
+}
+
+/*columna izquierda*/
+.pack-info {
+  flex: 1;                /*ocupa el 50 por ciento de la fila*/
+  display: flex;  /*activa flexbox para poner los elementos en columna*/
+  flex-direction: column; /*columnas*/
+}
+
+/*primer recuadro de columna izquierda*/
+.pack-intro {
+  border: 3px solid #1e2e1f;      /*bordeado del primer recuadro*/
+  margin-bottom: 10px;              /*margen externo por debajo respecto al segundo recuadro*/
+
+}
+/*título y precio*/
+.pack-header {
+  position: absolute;     /*para colocar el texto encima*/
+  z-index: 2;       /*poner encima de la imagen*/
+  top: 5%;      /*posicion para colocar el texto sobre la imagen*/
+  left: 10px;     /*posicion para colocar el texto sobre la imagen*/
+  right: 10px;     /*posicion para colocar el texto sobre la imagen*/
+  display: flex;                    /*activa flexbox para poner titulo y en precio en fila*/
+  justify-content: space-between;   /*pone los botones en los lados*/
+  
+}
+/*titulo y precio */
+.pack-header h2, .precio {
+  font-size: 18px;         /*tamano de letra*/
+  margin: 0;                /*elimina margen*/
+  padding: 5px 10px;            /*espacio interno arriba,abajo e izquierda y derecha*/
+  background-color: rgba(30,46,31,0.8); /*color de fondo*/
+  color: white;           /*color letra*/
+  border-radius: 5px;       /*redondeado*/
+}
+
+/*subtexto del titulo del pack*/
+.pack-intro p {
+  position: absolute;    /*para colocar el texto encima*/
+  z-index: 2;         /*pone encima de la imagen*/
+  top: 10%;           /*posicion para colocar el texto sobre la imagen*/
+  left: 10px;          /*posicion para colocar el texto sobre la imagen*/
+  display: inline;        /*para que se comporte como un texto*/
+  font-size: 14px;          /*tanaño de letra 14*/
+  padding: 5px 10px;        /*espacio interno arriba,derecha,abajo,izquierda*/
+  background-color: rgba(30,46,31,0.8);     /*color de fondo*/
+  color: white;               /*color letra*/
+  border-radius: 5px;         /*redondeado*/
+}
+
+/*imagen*/
+.pack-imagen {
+  position: relative;   /*permite colocar texto encima*/
+  width: 100%;          /*ocupa el ancho del contenedor*/
+  height: 100%;        /*ocupa el alto del contenedor*/
+  overflow: visible;     /*permitir mostrar elementos colocados fuera de la imagen*/
+}
+
+.pack-imagen img {
+  width: 100%;          /*ocupa todo el ancho del contenedor*/
+  height: 100%;         /*ocupa toda la altura*/
+  object-fit: cover;    /*mantiene la proporcion y recorta si sobresale */
+}
+
+/*segundo recuadro de columna izquierda*/
+/*descripcion del pack */
+.pack-descripcion {
+  border: 3px solid #1e2e1f;      /*bordeado de contenedor*/
+  padding: 10px;                  /*margen interno 10px*/
+  background-color: #d2e6cd;    /*color de fondo*/
+  margin: 0px;                    /*quita un margen que sin motivo aparecio*/
+}
+/*subtitulo de descripcion */
+.pack-descripcion h3 {
+  font-size: 16px;          /*tamaño texto*/
+  margin-bottom: 5px;        /*margen externo por debajo del texto*/
+}
+
+.valoracion-global-display {
+  display: flex;
+  align-items: center; 
+  gap: 8px; /* Espacio horizontal entre elementos */
+  font-size: 14px;          /*tanaño de letra 14*/
+  padding: 5px 10px;        /*espacio interno arriba,derecha,abajo,izquierda*/
+  background-color: rgba(30,46,31,0.8);     /*color de fondo*/
+  color: white;               /*color letra*/
+  border-radius: 5px;         /*redondeado*/
+}
+
+
+@media (min-width: 768px) {
+  .pack-descripcion {
+    flex-grow: 1; /*llega hasta el final del contenedor*/
+  }
+}
+
+/*columna derecha: formulario de compra*/
+.formulario-compra {
+  flex: 1;                        /*ocupa el 50 por ciento de la fila*/
+  border: 3px solid #1e2e1f;      /*bordeado de formulario*/
+  background-color: #d2e6cd;      /*color de fondo*/
+  padding:15px;                     /*marge interno 15px*/
+}
+/*titulo*/
+.formulario-compra h2 {
+  text-align: center;         /*centra el titulo horizontalmente*/
+  padding: 15px;            /*espacio interno alrededor del titulo*/
+}
+/*formulario*/
+.formulario-compra form {
+  display: flex;              /*activa flexbox para organizar los elementos*/
+  flex-direction: column;       /*organiza en columna*/
+  gap: 15px;                /*espacio vertical entre los elementos del formulario*/
+}
+/*inputs de formulario*/
+.formulario-compra input,
+.formulario-compra select {
+  padding: 8px;                  /*espacio interno dentro de los inputs y selects*/
+  font-size: 14px;               /*tanaño de letra*/
+  width: 100%;                  /*ocupa todo el ancho del contenedor*/
+  border: 1px solid #bababa;      /*color borde*/
+  border-radius: 10px;        /*redondeado*/
+  box-sizing: border-box;   /*quita problemas de salida de margen*/
+}
+/*selector de tipo de tarjeta*/
+#tarjeta {
+  cursor: pointer; /*cambia el cursor al pasar por encima*/
+}
+/*fecha de caducidad y cvv*/
+.fecha-cvv {
+  display: flex;      /*organiza los elementos en fila*/
+  gap: 20px;         /*espacio horizontal*/
+  margin: 15px 0;     /*espacio arriba y abajo del contenedor*/
+}
+.fecha-caducidad{
+  display: grid; /*activa grid para poner los elementos en filas y columnas*/
+  grid-template-columns: auto 1fr; /*columnas*/
+  gap: 5px; /*separacion entre filas y columnas*/
+  align-items: center; /*centra verticalmente los elementos*/
+  justify-content: center; /*centra horizontalmente los elementos*/
+  padding: 10px; /*espacio interno*/
+  margin: 0 auto; /*margen arriba y abajo, centrado horizontalmente*/
+  width: fit-content; /*ajusta el ancho al contenido*/
+  position: relative; /*para posicionar placeholder visual*/
+}
+#fecha-caducidad {
+  width: auto; /*ancho automatico*/
+  padding: 8px; /*espacio interno*/
+  margin-top: 5px; /*margen por encima*/
+  box-sizing: border-box; /*quita problemas de salida de margen*/
+  border: 1px solid #bababa; /*color borde*/
+  border-radius: 10px; /*redondeado*/
+  cursor: pointer; /*cambia el cursor al pasar por encima*/
+}
+.cvv {
+  display: flex;              /*activa flexbox*/
+  flex-direction: column;       /*pone el label arriba y el input debajo*/
+  gap: 15px;                   /*espacio entre label e input*/
+  align-items: center;  /*centra horizontalmente el label e input*/
+  flex: 1;            /*hace que ocupen el mismo ancho dentro del contenedor*/
+}
+/*contenedor MM AA*/
+.input-fecha {
+  display: flex;      /*activa flexbox para poner inputs en fila*/
+  flex-direction: row;    /*organiza los inputs en fila horizontal*/
+  gap: 5px;               /*espacio entre inputs y barra*/
+  align-items: center;    /*alinea verticalmente los elementos*/
+}
+/*inputs de fecha */
+.input-fecha input {
+  display: inline-block;      /*lo pone como bloques en linea*/
+  width: 50px;             /*ancho de cada input de fecha*/
+  text-align: center;       /*centra el texto*/
+  padding: 5px;               /*espacio interno*/
+}
+/*barra*/
+.input-fecha span {
+  display: inline-block;    /*para que se mantenga en la misma linea*/
+  font-weight: bold;       /*barra negrita*/
+}
+/*cvv*/
+.cvv input {
+  width: 40px;         /*ancho input*/
+  padding: 5px;        /*espacio interno*/
+}
+/*botones*/
+.botones {
+  display: flex;            /* botones en fila */
+  gap: 16px;                /* separación entre los dos botones */
+  margin-top: 10px;         /* espacio por encima */
+}
+.botones button {
+  flex: 1 1 0;              /* ocuparán el mismo espacio (cada uno la mitad disponible) */
+  min-width: 0;            /* permitir que se encojan correctamente */
+  border: 1.5px solid #6a6a6a;    /* borde de los botones */
+  font-weight: bold;               /* negrita */
+  padding: 12px;                   /* espacio interno reducida para mantener consistencia */
+  border-radius: 10px;             /* redondeado */
+  transition: 0.3s;                /* transición para hover */
+  cursor: pointer;                 /* cursor pointer */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.botones button:hover {
+  background-color: #a1a1a1;      /* color al pasar el ratón */
+}
+
+/* Responsive: en pantallas estrechas los botones se apilan y ocupan 100% */
+@media (max-width: 600px) {
+  .botones {
+    flex-direction: column;
+  }
+  .botones button {
+    width: 100%;
+  }
+}
+
+/* Diferenciar submit y reset por type */
+.botones button[type="submit"] {
+  background-color: rgb(168, 209, 155); /* verde primario */
+  color: black;
+}
+.botones button[type="submit"]:hover {
+  background-color: rgb(130, 167, 120);
+}
+
+.botones button[type="reset"] {
+  background-color: #f0a0a0; /* claro neutro */
+  color: black;
+}
+.botones button[type="reset"]:hover {
+  background-color: #c36666;
+}
+
+/*estilos para datos de ampliación*/
+.datos-ampliacion {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-left: 4px solid rgb(164, 196, 154);
+  border-radius: 5px;
+}
+
+.datos-ampliacion h3 {
+  margin-top: 0;
+  color: rgb(54, 85, 45);
+  font-size: 18px;
+}
+
+.datos-ampliacion p {
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.info-ampliacion {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.ampliacion-info {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #666;
+}
